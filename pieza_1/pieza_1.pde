@@ -6,8 +6,8 @@
 */
 
 //String palabra = "abcdefgh";
-String palabra = "ooch";
-//String palabra = "coch";
+String palabra = "och";
+//String palabra = "coh";
 char[] arr = palabra.toCharArray();
 int pos_c;
 int pos_h;
@@ -17,28 +17,32 @@ void setup() {
   //println(arr);
   //println("El tamaño del array es: " + arr.length);
   
+  pos_c = linearSearch(arr, arr.length, 'c');
+  pos_h = linearSearch(arr, arr.length, 'h');
+  
   for (int i = 0; i < arr.length; i++) {
     if (arr[i] == 'a' || arr[i] == 'A') {
-      println("El valor de 'a' minúscula o 'A' mayúscula es 1");
+      println("El valor de 'a' minúscula o 'A' mayúscula es 1.");
     } else if (arr[i] == 'b' || arr[i] == 'B') {
-      println("El valor de 'b' minúscula o 'B' mayúscula es 2");
+      println("El valor de 'b' minúscula o 'B' mayúscula es 2.");
     } else if (arr[i] == 'c' || arr[i] == 'C') {
-      println("El valor de 'c' minúscula o 'C' mayúscula es 3");
-      pos_c = linearSearch(arr, arr.length, 'c');
+      //println("El valor de 'c' minúscula o 'C' mayúscula es 3.");
+      //pos_c = linearSearch(arr, arr.length, 'c');
+      palabraCh(pos_h, pos_c);
       //println("La posicioón de c es: " + pos_c);
     } else if (arr[i] == 'd' || arr[i] == 'D') {
-      println("El valor de 'd' minúscula o 'D' mayúscula es 5");
+      println("El valor de 'd' minúscula o 'D' mayúscula es 5.");
     } else if (arr[i] == 'e' || arr[i] == 'E') {
-      println("El valor de 'e' minúscula o 'E' mayúscula es 6");
+      println("El valor de 'e' minúscula o 'E' mayúscula es 6.");
     } else if (arr[i] == 'f' || arr[i] == 'F') {
-      println("El valor de 'f' minúscula o 'F' mayúscula es 7");
+      println("El valor de 'f' minúscula o 'F' mayúscula es 7.");
     } else if (arr[i] == 'g' || arr[i] == 'G') {
-      println("El valor de 'g' minúscula o 'G' mayúscula es 8");
+      println("El valor de 'g' minúscula o 'G' mayúscula es 8.");
     } else if (arr[i] == 'h' || arr[i] == 'H') {
-      println("El valor de 'h' minúscula o 'H' mayúscula es 9");
-      pos_h = linearSearch(arr, arr.length, 'h');
+      //println("El valor de 'h' minúscula o 'H' mayúscula es 9.");
+      //pos_h = linearSearch(arr, arr.length, 'h');
       //println("La posicioón de h es: " + pos_h);
-      palabraCh();
+      palabraCh(pos_h, pos_c);
     } else {
      println("¡NO HAY VALORES ESTA LETRA!"); 
     }
@@ -57,10 +61,21 @@ int linearSearch(char arr[], int n, char x) {
     return -1; 
 }
 
-void palabraCh() {
-  if (pos_c < pos_h && pos_h < pos_c + 2) { 
-    println("¡H ES CONSECUTIVA DE C!, POR LO TANTO EXISTE LA PALABRA CH CON UN VALOR DE 4.");
+void palabraCh(int pos_h, int pos_c) {
+  if (pos_c > pos_h) {
+    println("El valor de c/C es 3.");
   } else {
-    println("¡H NO ES CONSECUTIVA C!, POR LO TANTO NO EXISTE LA PALABRA CH");  
+    println("c/C pierde su valor de 3.");
+    println("Se fucionan la lentra c y la h.");
+  }
+  println();
+  
+  if (pos_c < pos_h && pos_h < pos_c + 2) { 
+    println("h/H es consecutiva de c/C."); 
+    println("h/H pierde su valor de 9.");
+    println("Por lo tanto tenemos la letra ch-CH con un valor de 4.");
+  } else {
+    println("¡H no es consecutiva de c!, por lo tanto no existe la palabra ch"); 
+    println("El valor de h/H es 9.");
   }
 }
