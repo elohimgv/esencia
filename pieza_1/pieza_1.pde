@@ -5,9 +5,11 @@
 *
 */
 
-String palabra = "abcdefgh";
+//String palabra = "abcdefgh";
+String palabra = "ooch";
 char[] arr = palabra.toCharArray();
-int pos;
+int pos_c;
+int pos_h;
 
 void setup() {
   println(palabra);
@@ -21,8 +23,8 @@ void setup() {
       println("El valor de 'b' minúscula o 'B' mayúscula es 2");
     } else if (arr[i] == 'c' || arr[i] == 'C') {
       println("El valor de 'c' minúscula o 'C' mayúscula es 3");
-      pos = linearSearch(arr, 8, 'c');
-      println("Larr posicioón de c es: " + pos);
+      pos_c = linearSearch(arr, arr.length, 'c');
+      println("Larr posicioón de c es: " + pos_c);
     } else if (arr[i] == 'd' || arr[i] == 'D') {
       println("El valor de 'd' minúscula o 'D' mayúscula es 5");
     } else if (arr[i] == 'e' || arr[i] == 'E') {
@@ -33,8 +35,15 @@ void setup() {
       println("El valor de 'g' minúscula o 'G' mayúscula es 8");
     } else if (arr[i] == 'h' || arr[i] == 'H') {
       println("El valor de 'h' minúscula o 'H' mayúscula es 5");
+      pos_h = linearSearch(arr, arr.length, 'h');
+      println("Larr posicioón de h es: " + pos_h);
+      if (pos_c < pos_h && pos_h < pos_c + 2) { 
+        println("¡ES CONSECUTIVO!");
+      } else {
+       println("¡NO ES CONSECUTIVO!"); 
+      }
     } else {
-     println("No hay valores"); 
+     println("¡NO HAY VALORES ESTA LETRA!"); 
     }
   }
 }
