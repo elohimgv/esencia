@@ -28,7 +28,7 @@ void setup() {
     } else if (arr[i] == 'c' || arr[i] == 'C') {
       //println("El valor de 'c' minúscula o 'C' mayúscula es 3.");
       //pos_c = linearSearch(arr, arr.length, 'c');
-      palabraCh(pos_h, pos_c);
+      letraC(pos_c);
       //println("La posicioón de c es: " + pos_c);
     } else if (arr[i] == 'd' || arr[i] == 'D') {
       println("El valor de 'd' minúscula o 'D' mayúscula es 5.");
@@ -42,9 +42,9 @@ void setup() {
       //println("El valor de 'h' minúscula o 'H' mayúscula es 9.");
       //pos_h = linearSearch(arr, arr.length, 'h');
       //println("La posicioón de h es: " + pos_h);
-      palabraCh(pos_h, pos_c);
+      consecutivaDeCesH(pos_h);
     } else {
-     println("¡NO HAY VALORES ESTA LETRA!"); 
+     println("¡NO HAY VALORES DE ESTA LETRA!"); 
     }
   }
 }
@@ -61,15 +61,16 @@ int linearSearch(char arr[], int n, char x) {
     return -1; 
 }
 
-void palabraCh(int pos_h, int pos_c) {
+void letraC(int pos_c) {
   if (pos_c > pos_h) {
     println("El valor de c/C es 3.");
   } else {
     println("c/C pierde su valor de 3.");
     println("Se fucionan la lentra c y la h.");
   }
-  println();
-  
+}
+
+void consecutivaDeCesH(int pos_h) {
   if (pos_c < pos_h && pos_h < pos_c + 2) { 
     println("h/H es consecutiva de c/C."); 
     println("h/H pierde su valor de 9.");
