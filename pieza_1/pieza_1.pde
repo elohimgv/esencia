@@ -6,7 +6,7 @@
 */
 
 //String palabra = "abcdefgh";
-String palabra = "och";
+String palabra = "ochx";
 //String palabra = "coh";
 char[] arr = palabra.toCharArray();
 int pos_c;
@@ -62,11 +62,11 @@ int linearSearch(char arr[], int n, char x) {
 }
 
 void letraC(int pos_c) {
-  if (pos_c > pos_h) {
-    println("El valor de c/C es 3.");
-  } else {
+  if (pos_c < pos_h && (pos_c < pos_h && pos_h < pos_c + 2)) {
     println("c/C pierde su valor de 3.");
     println("Se fucionan la lentra c y la h.");
+  } else {
+    println("El valor de c/C es 3.");
   }
 }
 
