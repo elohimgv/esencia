@@ -8,7 +8,7 @@
 //String palabra = "coh";
 //String palabra = "llopo";
 //String palabra = "abcdefghijklmnñopqrstuvxyz";
-String nombre = "Antonio Pérez Diaz";
+String nombre = "Antonio Diaz Pérez";
 char[] arr = nombre.toCharArray();
 int encontrar_c;
 int encontrar_h;
@@ -32,7 +32,7 @@ void setup() {
   
   for (int ciclo = 0; ciclo < arr.length; ciclo++) {
      // 1ra escala
-    if (arr[ciclo] == 'a' || arr[ciclo] == 'A') {
+    if (arr[ciclo] == 'a' || arr[ciclo] == 'A' || arr[ciclo] == 'á' || arr[ciclo] == 'Á') {
       println("El valor de a/A es 1.");
       a = 1;
     } else if (arr[ciclo] == 'b' || arr[ciclo] == 'B') {
@@ -44,7 +44,7 @@ void setup() {
     } else if (arr[ciclo] == 'd' || arr[ciclo] == 'D') {
       println("El valor de d/D es 5.");
       d = 5;
-    } else if (arr[ciclo] == 'e' || arr[ciclo] == 'E') {
+    } else if (arr[ciclo] == 'e' || arr[ciclo] == 'E' || arr[ciclo] == 'é' || arr[ciclo] == 'É') {
       println("El valor de e/E es 6.");
       e = 6;
     } else if (arr[ciclo] == 'f' || arr[ciclo] == 'F') {
@@ -57,7 +57,7 @@ void setup() {
       consecutivaDeCesH(encontrar_h);
       h = 9;
       // 2da escala
-    } else if (arr[ciclo] == 'i' || arr[ciclo] == 'I') {
+    } else if (arr[ciclo] == 'i' || arr[ciclo] == 'I' || arr[ciclo] == 'í' || arr[ciclo] == 'Í') {
       println("El valor de i/I es 1.");
       i = 1;
     } else if (arr[ciclo] == 'j' || arr[ciclo] == 'J') {
@@ -79,7 +79,7 @@ void setup() {
     } else if (arr[ciclo] == 'ñ' || arr[ciclo] == 'Ñ') {
       println("El valor de ñ/Ñ es 8.");
       nn = 8;
-    } else if (arr[ciclo] == 'o' || arr[ciclo] == 'O') {
+    } else if (arr[ciclo] == 'o' || arr[ciclo] == 'O' || arr[ciclo] == 'ó' || arr[ciclo] == 'Ó') {
       println("El valor de o/O es 9.");
       o = 9;
       // 3ra escala
@@ -98,7 +98,7 @@ void setup() {
     } else if (arr[ciclo] == 't' || arr[ciclo] == 'T') {
       println("El valor de t/T es 5.");
       t = 5;
-    } else if (arr[ciclo] == 'u' || arr[ciclo] == 'U') {
+    } else if (arr[ciclo] == 'u' || arr[ciclo] == 'U' || arr[ciclo] == 'ú' || arr[ciclo] == 'Ú') {
       println("El valor de u/U es 6.");
       u = 6;
     } else if (arr[ciclo] == 'v' || arr[ciclo] == 'V') {
@@ -169,6 +169,8 @@ void ll() {
 // Función principal
 void draw() {
   image(img, 0, 0);
+  float anchuraNombre = textWidth(nombre);
+  float posX = (1200 - anchuraNombre)/2;
   fill(255);
-  text(nombre, 100, 100);
+  text(nombre, posX, 100);
 }
