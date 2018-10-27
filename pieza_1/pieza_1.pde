@@ -5,13 +5,15 @@
 *
 */
 
-//String palabra = "abcdefgh";
-String palabra = "abcdefghijklmnñopqrstuvxyz";
 //String palabra = "coh";
 //String palabra = "llopo";
+String palabra = "abcdefghijklmnñopqrstuvxyz";
 char[] arr = palabra.toCharArray();
 int encontrar_c;
 int encontrar_h;
+// Letras
+int a,b,c,d,e,f,g,h,i,j,k,l,m,n,nn,o,p,q,r,s,t,u,v,x,y,z;
+String caracterNulo = "¡NO HAY VALORES DE ESTA LETRA!";
 
 void setup() {
   //println(palabra);
@@ -20,67 +22,93 @@ void setup() {
   
   encontrar_c = linearSearch(arr, arr.length, 'c');
   encontrar_h = linearSearch(arr, arr.length, 'h'); 
-
   
-  for (int i = 0; i < arr.length; i++) {
+  for (int ciclo = 0; ciclo < arr.length; ciclo++) {
      // 1ra escala
-    if (arr[i] == 'a' || arr[i] == 'A') {
+    if (arr[ciclo] == 'a' || arr[ciclo] == 'A') {
       println("El valor de a/A es 1.");
-    } else if (arr[i] == 'b' || arr[i] == 'B') {
+      a = 1;
+    } else if (arr[ciclo] == 'b' || arr[ciclo] == 'B') {
       println("El valor de b/B es 2.");
-    } else if (arr[i] == 'c' || arr[i] == 'C') {
+      b = 2;
+    } else if (arr[ciclo] == 'c' || arr[ciclo] == 'C') {
       letraC(encontrar_c);
-    } else if (arr[i] == 'd' || arr[i] == 'D') {
+      c = 3;
+    } else if (arr[ciclo] == 'd' || arr[ciclo] == 'D') {
       println("El valor de d/D es 5.");
-    } else if (arr[i] == 'e' || arr[i] == 'E') {
+      d = 5;
+    } else if (arr[ciclo] == 'e' || arr[ciclo] == 'E') {
       println("El valor de e/E es 6.");
-    } else if (arr[i] == 'f' || arr[i] == 'F') {
+      e = 6;
+    } else if (arr[ciclo] == 'f' || arr[ciclo] == 'F') {
       println("El valor de f/F es 7.");
-    } else if (arr[i] == 'g' || arr[i] == 'G') {
+      f = 7;
+    } else if (arr[ciclo] == 'g' || arr[ciclo] == 'G') {
       println("El valor de g/G es 8.");
-    } else if (arr[i] == 'h' || arr[i] == 'H') {
+      g = 8;
+    } else if (arr[ciclo] == 'h' || arr[ciclo] == 'H') {
       consecutivaDeCesH(encontrar_h);
+      h = 9;
       // 2da escala
-    } else if (arr[i] == 'i' || arr[i] == 'I') {
+    } else if (arr[ciclo] == 'i' || arr[ciclo] == 'I') {
       println("El valor de i/I es 1.");
-    } else if (arr[i] == 'j' || arr[i] == 'J') {
+      i = 1;
+    } else if (arr[ciclo] == 'j' || arr[ciclo] == 'J') {
       println("El valor de j/J es 2.");
-    } else if (arr[i] == 'k' || arr[i] == 'K') {
+      j = 2;
+    } else if (arr[ciclo] == 'k' || arr[ciclo] == 'K') {
       println("El valor de k/K es 3.");
-    } else if (arr[i] == 'l' || arr[i] == 'L') {
+      k = 3;
+    } else if (arr[ciclo] == 'l' || arr[ciclo] == 'L') {
       println("El valor de l/L es 4.");
-    } else if (arr[i] == 'm'|| arr[i] == 'M') {
+      l = 4;
+      // Falta ll
+    } else if (arr[ciclo] == 'm'|| arr[ciclo] == 'M') {
       println("El valor de m/M es 6.");
-    } else if (arr[i] == 'n' || arr[i] == 'N') {
+      m = 6;
+    } else if (arr[ciclo] == 'n' || arr[ciclo] == 'N') {
       println("El valor de n/N es 7.");
-    } else if (arr[i] == 'ñ' || arr[i] == 'Ñ') {
+      n = 7;
+    } else if (arr[ciclo] == 'ñ' || arr[ciclo] == 'Ñ') {
       println("El valor de ñ/Ñ es 8.");
-    } else if (arr[i] == 'o' || arr[i] == 'O') {
+      nn = 8;
+    } else if (arr[ciclo] == 'o' || arr[ciclo] == 'O') {
       println("El valor de o/O es 9.");
+      o = 9;
       // 3ra escala
-    } else if (arr[i] == 'p' || arr[i] == 'P') {
+    } else if (arr[ciclo] == 'p' || arr[ciclo] == 'P') {
       println("El valor de p/P es 1.");
-    } else if (arr[i] == 'q' || arr[i] == 'Q') {
+      p = 1;
+    } else if (arr[ciclo] == 'q' || arr[ciclo] == 'Q') {
       println("El valor de q/Q es 2.");
-    } else if (arr[i] == 'r' || arr[i] == 'R') {
+      q = 2;
+    } else if (arr[ciclo] == 'r' || arr[ciclo] == 'R') {
       println("El valor de r/R es 3.");
-    } else if (arr[i] == 's' || arr[i] == 'S') {
+      r = 3;
+    } else if (arr[ciclo] == 's' || arr[ciclo] == 'S') {
       println("El valor de s/S es 4.");
-    } else if (arr[i] == 't' || arr[i] == 'T') {
+      s = 4;
+    } else if (arr[ciclo] == 't' || arr[ciclo] == 'T') {
       println("El valor de t/T es 5.");
-    } else if (arr[i] == 'u' || arr[i] == 'U') {
+      t = 5;
+    } else if (arr[ciclo] == 'u' || arr[ciclo] == 'U') {
       println("El valor de u/U es 6.");
-    } else if (arr[i] == 'v' || arr[i] == 'V') {
+      u = 6;
+    } else if (arr[ciclo] == 'v' || arr[ciclo] == 'V') {
       println("El valor de v/V es 7.");
-    } else if (arr[i] == 'x' || arr[i] == 'X') {
+      v = 7;
+    } else if (arr[ciclo] == 'x' || arr[ciclo] == 'X') {
       println("El valor de x/X es 8.");
-    } else if (arr[i] == 'y' || arr[i] == 'Y') {
+      x = 8;
+    } else if (arr[ciclo] == 'y' || arr[ciclo] == 'Y') {
       println("El valor de y/Y es 9.");
+      y = 9;
       // 4ta escala
-    } else if (arr[i] == 'z' || arr[i] == 'Z') {
+    } else if (arr[ciclo] == 'z' || arr[ciclo] == 'Z') {
       println("El valor de z/Z es 1.");
+      z = 1;
     } else {
-     println("¡NO HAY VALORES DE ESTA LETRA!"); 
+     println(caracterNulo); 
     }
   }
 }
@@ -122,4 +150,13 @@ void consecutivaDeCesH(int encontrar_h) {
     println("¡H no es consecutiva de c!, por lo tanto no existe la palabra ch"); 
     println("El valor de h/H es 9.");
   }
+}
+
+void ll() {
+  
+}
+
+// Función principal
+void darw() {
+  
 }
