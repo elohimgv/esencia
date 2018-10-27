@@ -7,15 +7,22 @@
 
 //String palabra = "coh";
 //String palabra = "llopo";
-String palabra = "abcdefghijklmnñopqrstuvxyz";
-char[] arr = palabra.toCharArray();
+//String palabra = "abcdefghijklmnñopqrstuvxyz";
+String nombre = "Antonio Pérez Diaz";
+char[] arr = nombre.toCharArray();
 int encontrar_c;
 int encontrar_h;
 // Letras
 int a,b,c,d,e,f,g,h,i,j,k,l,m,n,nn,o,p,q,r,s,t,u,v,x,y,z;
 String caracterNulo = "¡NO HAY VALORES DE ESTA LETRA!";
+PFont fuente;
+PImage img;
 
 void setup() {
+  size(1200, 760); 
+  fuente = loadFont("Raleway-Regular-48.vlw");
+  textFont(fuente);
+  img = loadImage("fondo.jpg");
   //println(palabra);
   println(arr);
   //println("El tamaño del arreglo es: " + arr.length);
@@ -108,6 +115,9 @@ void setup() {
       println("El valor de z/Z es 1.");
       z = 1;
     } else {
+      // Indica que es un espacio o es tulizado 
+      // algun otro caracter que no está
+      // dento de los parámetros 
      println(caracterNulo); 
     }
   }
@@ -157,6 +167,8 @@ void ll() {
 }
 
 // Función principal
-void darw() {
-  
+void draw() {
+  image(img, 0, 0);
+  fill(255);
+  text(nombre, 100, 100);
 }
