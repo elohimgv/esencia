@@ -5,178 +5,271 @@
 *
 */
 
-String nombre = "Antonio Diaz Pérez";
-char[] arr = nombre.toCharArray();
+// Variables para el nombre de la persona
+String nombre = "Elohim";
+String apellidoPaterno = "Guevara";
+String apellidoMaterno = "Varela";
+// Convetir la cadena en un arreglo de caracteres
+char[] arrNombre = nombre.toCharArray();
+char[] arrApellidoPaterno = apellidoPaterno.toCharArray();
+char[] arrApellidoMaterno = apellidoMaterno.toCharArray();
+// Letra del alfabeto español ch y ll
 int encontrar_c;
 int encontrar_h;
-// Letras
+// Resto de letras del alfabeto español
 int a,b,c,d,e,f,g,h,i,j,k,l,m,n,nn,o,p,q,r,s,t,u,v,x,y,z;
-int contadorA,contadorB,contadorC,contadorD,contadorE,contadorF,
-    contadorG,contadorH,contadorI,contadorJ,contadorK,contadorL,
-    contadorM,contadorN,contadorNN,contadorO,contadorP,contadorQ,
-    contadorR,contadorS,contadorT,contadorU,contadorV,contadorX,
-    contadorY,contadorZ = 0;
+// Variables para conocer la suma (valor) individual del nombre, apellido
+// paterno y apellido materno, y la suma total de los tres componentes
+int valorA,valorB,valorC,valorD,valorE,valorF,valorG,valorH,valorI,valorJ,valorK,
+valorL,valorM,valorN,valorNN,valorO,valorP,valorQ,valorR,valorS,valorT,valorU,valorV,
+valorX,valorY,valorZ = 0;
+// Me indica que cantidad de veces aparece determinada letra en cada uno de los tres
+// componenentes: nombre, apellido paterno y apellido materno; también, la suma
+// total de los tres componentes.
+int aparicionesA,aparicionesB,aparicionesC,aparicionesD,aparicionesE,aparicionesF,
+    aparicionesG,aparicionesH,aparicionesI,aparicionesJ,aparicionesK,aparicionesL,
+    aparicionesM,aparicionesN,aparicionesNN,aparicionesO,aparicionesP,aparicionesQ,
+    aparicionesR,aparicionesS,aparicionesT,aparicionesU,aparicionesV,aparicionesX,
+    aparicionesY,aparicionesZ = 0;
 int totalA,totalB,totalC,totalD,totalE,totalF,totalG,totalH,totalI,
     totalJ,totalK,totalL,totalM,totalN,totalNN,totalO,totalP,totalQ,
     totalR,totalS,totalT,totalU,totalV,totalX,totalY,totalZ= 0;
+    
 String caracterNulo = "¡NO HAY VALORES DE ESTA LETRA!";
+
 PFont fuente;
 PImage img;
 
 void setup() {
+  // Tamaño del lienzo
   size(1200, 760); 
+  // Carga la fuente
   fuente = loadFont("Raleway-Regular-48.vlw");
   textFont(fuente);
+  // Carga la imagen
   img = loadImage("fondo.jpg");
+  
+  lectorDeLetras(arrNombre, 1);
+  lectorDeLetras(arrApellidoPaterno, 2);
+  lectorDeLetras(arrApellidoMaterno, 3);
+}
+
+// Función
+void lectorDeLetras(char[] arr, int plb) {
   //println(palabra);
   //println(arr);
   //println("El tamaño del arreglo es: " + arr.length);
   
-  encontrar_c = linearSearch(arr, arr.length, 'c');
-  encontrar_h = linearSearch(arr, arr.length, 'h'); 
+  encontrar_c = busquedaLineal(arr, arr.length, 'c');
+  encontrar_h = busquedaLineal(arr, arr.length, 'h'); 
   for (int ciclo = 0; ciclo < arr.length; ciclo++) {
      // 1ra escala
     if (arr[ciclo] == 'a' || arr[ciclo] == 'A' || arr[ciclo] == 'á' || arr[ciclo] == 'Á') {
       println("El valor de a/A es 1.");
       a = 1;
-      contadorA++;
-      totalA = contadorA;
+      aparicionesA++;
+      valorA = a*aparicionesA;
+      totalA = aparicionesA;
     } else if (arr[ciclo] == 'b' || arr[ciclo] == 'B') {
       println("El valor de b/B es 2.");
       b = 2;
-      contadorB++;
-      totalB = contadorB;
+      aparicionesB++;
+      valorB = b*aparicionesB;
+      totalB = aparicionesB;
     } else if (arr[ciclo] == 'c' || arr[ciclo] == 'C') {
       letraC(encontrar_c);
       c = 3;
-      contadorC++;
-      totalC = contadorC;
+      aparicionesC++;
+      valorC = c*aparicionesC;
+      totalC = aparicionesC;
     } else if (arr[ciclo] == 'd' || arr[ciclo] == 'D') {
       println("El valor de d/D es 5.");
       d = 5;
-      contadorD++;
-      totalD = contadorD;
+      aparicionesD++;
+      valorD = d*aparicionesD;
+      totalD = aparicionesD;
     } else if (arr[ciclo] == 'e' || arr[ciclo] == 'E' || arr[ciclo] == 'é' || arr[ciclo] == 'É') {
       println("El valor de e/E es 6.");
       e = 6;
-      contadorE++;
-      totalE = contadorE;
+      aparicionesE++;
+      valorE = e*aparicionesE;
+      totalE = aparicionesE;
     } else if (arr[ciclo] == 'f' || arr[ciclo] == 'F') {
       println("El valor de f/F es 7.");
       f = 7;
-      contadorF++;
-      totalF = contadorF;
+      aparicionesF++;
+      valorF = f*aparicionesF;
+      totalF = aparicionesF;
     } else if (arr[ciclo] == 'g' || arr[ciclo] == 'G') {
       println("El valor de g/G es 8.");
       g = 8;
-      contadorG++;
-      totalG = contadorG;
+      aparicionesG++;
+      valorG = g*aparicionesG;
+      totalG = aparicionesG;
     } else if (arr[ciclo] == 'h' || arr[ciclo] == 'H') {
       consecutivaDeCesH(encontrar_h);
       h = 9;
-      contadorH++;
-      totalH = contadorH;
+      aparicionesH++;
+      valorH = h*aparicionesH;
+      totalH = aparicionesH;
       // 2da escala
     } else if (arr[ciclo] == 'i' || arr[ciclo] == 'I' || arr[ciclo] == 'í' || arr[ciclo] == 'Í') {
       println("El valor de i/I es 1.");
       i = 1;
-      contadorI++;
-      totalI = contadorI;
+      aparicionesI++;
+      valorI = i*aparicionesI;
+      totalI = aparicionesI;
     } else if (arr[ciclo] == 'j' || arr[ciclo] == 'J') {
       println("El valor de j/J es 2.");
       j = 2;
-      contadorJ++;
-      totalJ = contadorJ;
+      aparicionesJ++;
+      valorJ = j*aparicionesJ;
+      totalJ = aparicionesJ;
     } else if (arr[ciclo] == 'k' || arr[ciclo] == 'K') {
       println("El valor de k/K es 3.");
       k = 3;
-      contadorK++;
-      totalK = contadorK;
+      aparicionesK++;
+      valorK = k*aparicionesK;
+      totalK = aparicionesK;
     } else if (arr[ciclo] == 'l' || arr[ciclo] == 'L') {
       println("El valor de l/L es 4.");
       l = 4;
-      contadorL++;
-      totalL = contadorL;
+      aparicionesL++;
+      valorL = l*aparicionesL;
+      totalL = aparicionesL;
       // Falta ll
     } else if (arr[ciclo] == 'm'|| arr[ciclo] == 'M') {
       println("El valor de m/M es 6.");
       m = 6;
-      contadorM++;
-      totalM = contadorM;
+      aparicionesM++;
+      valorM = m*aparicionesM;
+      totalM = aparicionesM;
     } else if (arr[ciclo] == 'n' || arr[ciclo] == 'N') {
       println("El valor de n/N es 7.");
       n = 7;
-      contadorN++;
-      totalN = contadorN;
+      aparicionesN++;
+      valorN = n*aparicionesN;
+      totalN = aparicionesN;
     } else if (arr[ciclo] == 'ñ' || arr[ciclo] == 'Ñ') {
       println("El valor de ñ/Ñ es 8.");
       nn = 8;
-      contadorNN++;
-      totalNN = contadorNN;
+      aparicionesNN++;
+      valorNN = nn*aparicionesNN;
+      totalNN = aparicionesNN;
     } else if (arr[ciclo] == 'o' || arr[ciclo] == 'O' || arr[ciclo] == 'ó' || arr[ciclo] == 'Ó') {
       println("El valor de o/O es 9.");
       o = 9;
-      contadorO++;
-      totalO = contadorO;
+      aparicionesO++;
+      valorO = o*aparicionesO;
+      totalO = aparicionesO;
       // 3ra escala
     } else if (arr[ciclo] == 'p' || arr[ciclo] == 'P') {
       println("El valor de p/P es 1.");
       p = 1;
-      contadorP++;
-      totalP = contadorP;
+      aparicionesP++;
+      valorP = p*aparicionesP;
+      totalP = aparicionesP;
     } else if (arr[ciclo] == 'q' || arr[ciclo] == 'Q') {
       println("El valor de q/Q es 2.");
       q = 2;
-      contadorQ++;
-      totalQ = contadorQ;
+      aparicionesQ++;
+      valorQ = q*aparicionesQ;
+      totalQ = aparicionesQ;
     } else if (arr[ciclo] == 'r' || arr[ciclo] == 'R') {
       println("El valor de r/R es 3.");
       r = 3;
-      contadorR++;
-      totalR = contadorR;
+      aparicionesR++;
+      valorR = r*aparicionesR;
+      totalR = aparicionesR;
     } else if (arr[ciclo] == 's' || arr[ciclo] == 'S') {
       println("El valor de s/S es 4.");
       s = 4;
-      contadorS++;
-      totalS = contadorS;
+      aparicionesS++;
+      valorS = s*aparicionesS;
+      totalS = aparicionesS;
     } else if (arr[ciclo] == 't' || arr[ciclo] == 'T') {
       println("El valor de t/T es 5.");
       t = 5;
-      contadorT++;
-      totalT = contadorT;
+      aparicionesT++;
+      valorT = t*aparicionesT;
+      totalT = aparicionesT;
     } else if (arr[ciclo] == 'u' || arr[ciclo] == 'U' || arr[ciclo] == 'ú' || arr[ciclo] == 'Ú') {
       println("El valor de u/U es 6.");
       u = 6;
-      contadorU++;
-      totalU = contadorU;
+      aparicionesU++;
+      valorU = u*aparicionesU;
+      totalU = aparicionesU;
     } else if (arr[ciclo] == 'v' || arr[ciclo] == 'V') {
       println("El valor de v/V es 7.");
       v = 7;
-      contadorV++;
-      totalV = contadorV;
+      aparicionesV++;
+      valorV = v*aparicionesV;
+      totalV = aparicionesV;
     } else if (arr[ciclo] == 'x' || arr[ciclo] == 'X') {
       println("El valor de x/X es 8.");
       x = 8;
-      contadorX++;
-      totalX = contadorX;
+      aparicionesX++;
+      valorX = x*aparicionesX;
+      totalX = aparicionesX;
     } else if (arr[ciclo] == 'y' || arr[ciclo] == 'Y') {
       println("El valor de y/Y es 9.");
       y = 9;
-      contadorY++;
-      totalY = contadorY;
+      aparicionesY++;
+      valorY = y*aparicionesY;
+      totalY = aparicionesY;
       // 4ta escala
     } else if (arr[ciclo] == 'z' || arr[ciclo] == 'Z') {
       println("El valor de z/Z es 1.");
       z = 1;
-      contadorZ++;
-      totalZ = contadorZ;
+      aparicionesZ++;
+      valorZ = z*aparicionesZ;
+      totalZ = aparicionesZ;
     } else {
       // Indica que es un espacio o es tulizado 
-      // algun otro caracter que no está
-      // dento de los parámetros 
-     println(caracterNulo); 
+      // por algun otro caracter que no está
+      // dentro de los parámetros establecidos.
+      println(caracterNulo);    
     } 
   }
+  int totalValorPalabra = valorA+valorB+valorC+valorD+valorE+valorF+valorG+valorH+valorI+
+  valorJ+valorK+valorL+valorM+valorN+valorNN+valorO+valorP+valorQ+valorR+valorS+valorT+
+  valorU+valorV+valorX+valorY+valorZ;
+  if (plb == 1) {
+    println("El valor del NOMBRE es: "+totalValorPalabra);
+  }
+  if (plb == 2) {
+    println("El valor del APELLIDO PATERNO es: "+totalValorPalabra);
+  }
+  if (plb == 3) {
+    println("El valor del APELLIDO MATERNO es: "+totalValorPalabra);
+  }
+  valorA=0;
+  valorB=0;
+  valorC=0;
+  valorD=0;
+  valorE=0;
+  valorF=0;
+  valorG=0;
+  valorH=0;
+  valorI=0;
+  valorJ=0;
+  valorK=0;
+  valorL=0;
+  valorM=0;
+  valorN=0;
+  valorNN=0;
+  valorO=0;
+  valorP=0;
+  valorQ=0;
+  valorR=0;
+  valorS=0;
+  valorT=0;
+  valorU=0;
+  valorV=0;
+  valorX=0;
+  valorY=0;
+  valorZ =0;
+  
   println("El total de apariciones de la letra A es : "+totalA);
   println("El total de apariciones de la letra B es : "+totalB);
   println("El total de apariciones de la letra C es : "+totalC);
@@ -203,10 +296,41 @@ void setup() {
   println("El total de apariciones de la letra X es : "+totalX);
   println("El total de apariciones de la letra Y es : "+totalY);
   println("El total de apariciones de la letra Z es : "+totalZ);
+  
+  aparicionesA=0;
+  aparicionesB=0;
+  aparicionesC=0;
+  aparicionesD=0;
+  aparicionesE=0;
+  aparicionesF=0;
+  aparicionesG=0;
+  aparicionesH=0;
+  aparicionesI=0;
+  aparicionesJ=0;
+  aparicionesK=0;
+  aparicionesL=0;
+  aparicionesM=0;
+  aparicionesN=0;
+  aparicionesO=0;
+  aparicionesP=0;
+  aparicionesQ=0;
+  aparicionesR=0;
+  aparicionesS=0;
+  aparicionesT=0;
+  aparicionesU=0;
+  aparicionesV=0;
+  aparicionesX=0;
+  aparicionesY=0;
+  aparicionesZ=0;
 }
 
-// Búsqueda lineal
-int linearSearch(char arr[], int n, char x) {
+// Función
+void totales() {
+ 
+}
+
+// Función 
+int busquedaLineal(char arr[], int n, char x) {
   for (int i = 0; i < n; i++)  { 
     // Retornar la posición (index) del elemento si  
     // el elemento es encontrado 
@@ -217,6 +341,7 @@ int linearSearch(char arr[], int n, char x) {
     return -1; 
 }
 
+// Función
 // La finalidad de las funciones letraC() y consecutivaDeCesH() es encontrar la 
 // letra c, y que después de esa letra c, exista un letra h para formar la letra
 // 'ch' que es parte del alfabeto Español. Estás funciones tienen el desempeño
@@ -233,6 +358,7 @@ void letraC(int encontrar_c) {
   }
 }
 
+// Función
 void consecutivaDeCesH(int encontrar_h) {
   if (encontrar_c < encontrar_h && encontrar_h < encontrar_c + 2) { 
     println("h/H es consecutiva de c/C."); 
@@ -244,6 +370,7 @@ void consecutivaDeCesH(int encontrar_h) {
   }
 }
 
+// Función
 void ll() {
   
 }
