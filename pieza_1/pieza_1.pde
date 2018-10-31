@@ -6,9 +6,9 @@
 */
 
 // Variables para el nombre de la persona
-String nombre = "Elohim";
-String apellidoPaterno = "Guevara";
-String apellidoMaterno = "Varela";
+String nombre = "Antonio";
+String apellidoPaterno = "Díaz";
+String apellidoMaterno = "Pérez";
 // Convetir la cadena en un arreglo de caracteres
 char[] arrNombre = nombre.toCharArray();
 char[] arrApellidoPaterno = apellidoPaterno.toCharArray();
@@ -33,8 +33,10 @@ int aparicionesA,aparicionesB,aparicionesC,aparicionesD,aparicionesE,apariciones
     aparicionesY,aparicionesZ = 0;
 int totalA,totalB,totalC,totalD,totalE,totalF,totalG,totalH,totalI,
     totalJ,totalK,totalL,totalM,totalN,totalNN,totalO,totalP,totalQ,
-    totalR,totalS,totalT,totalU,totalV,totalX,totalY,totalZ= 0;
-    
+    totalR,totalS,totalT,totalU,totalV,totalX,totalY,totalZ = 0;
+// Me indica el valor del nombre completo
+int totalValorNombre,totalValorApellidoPaterno,totalValorApellidoMaterno = 0;
+     
 String caracterNulo = "¡NO HAY VALORES DE ESTA LETRA!";
 
 PFont fuente;
@@ -52,6 +54,7 @@ void setup() {
   lectorDeLetras(arrNombre, 1);
   lectorDeLetras(arrApellidoPaterno, 2);
   lectorDeLetras(arrApellidoMaterno, 3);
+  totales(nombre, apellidoPaterno, apellidoMaterno);
 }
 
 // Función
@@ -231,18 +234,23 @@ void lectorDeLetras(char[] arr, int plb) {
       println(caracterNulo);    
     } 
   }
+  
   int totalValorPalabra = valorA+valorB+valorC+valorD+valorE+valorF+valorG+valorH+valorI+
   valorJ+valorK+valorL+valorM+valorN+valorNN+valorO+valorP+valorQ+valorR+valorS+valorT+
   valorU+valorV+valorX+valorY+valorZ;
   if (plb == 1) {
     println("El valor del NOMBRE es: "+totalValorPalabra);
+    totalValorNombre = totalValorPalabra;
   }
   if (plb == 2) {
     println("El valor del APELLIDO PATERNO es: "+totalValorPalabra);
+    totalValorApellidoPaterno = totalValorPalabra;
   }
   if (plb == 3) {
     println("El valor del APELLIDO MATERNO es: "+totalValorPalabra);
+    totalValorApellidoMaterno = totalValorPalabra;
   }
+  
   valorA=0;
   valorB=0;
   valorC=0;
@@ -270,32 +278,84 @@ void lectorDeLetras(char[] arr, int plb) {
   valorY=0;
   valorZ =0;
   
-  println("El total de apariciones de la letra A es : "+totalA);
-  println("El total de apariciones de la letra B es : "+totalB);
-  println("El total de apariciones de la letra C es : "+totalC);
-  println("El total de apariciones de la letra D es : "+totalD);
-  println("El total de apariciones de la letra E es : "+totalE);
-  println("El total de apariciones de la letra F es : "+totalF);
-  println("El total de apariciones de la letra G es : "+totalG);
-  println("El total de apariciones de la letra H es : "+totalH);
-  println("El total de apariciones de la letra I es : "+totalI);
-  println("El total de apariciones de la letra J es : "+totalJ);
-  println("El total de apariciones de la letra K es : "+totalK);
-  println("El total de apariciones de la letra L es : "+totalL);
-  println("El total de apariciones de la letra M es : "+totalM);
-  println("El total de apariciones de la letra N es : "+totalN);
-  println("El total de apariciones de la letra Ñ es : "+totalNN);
-  println("El total de apariciones de la letra O es : "+totalO);
-  println("El total de apariciones de la letra P es : "+totalP);
-  println("El total de apariciones de la letra Q es : "+totalQ);
-  println("El total de apariciones de la letra R es : "+totalR);
-  println("El total de apariciones de la letra S es : "+totalS);
-  println("El total de apariciones de la letra T es : "+totalT);
-  println("El total de apariciones de la letra U es : "+totalU);
-  println("El total de apariciones de la letra V es : "+totalV);
-  println("El total de apariciones de la letra X es : "+totalX);
-  println("El total de apariciones de la letra Y es : "+totalY);
-  println("El total de apariciones de la letra Z es : "+totalZ);
+  if (aparicionesA > 0) {
+    println("El total de apariciones de la letra A es : "+totalA);
+  }
+  if (aparicionesB > 0) {
+    println("El total de apariciones de la letra B es : "+totalB);
+  }
+  if (aparicionesC > 0) {
+    println("El total de apariciones de la letra C es : "+totalC);
+  }
+  if (aparicionesD > 0) {
+    println("El total de apariciones de la letra D es : "+totalD);
+  }
+  if (aparicionesE > 0) {
+    println("El total de apariciones de la letra E es : "+totalE);
+  }
+  if (aparicionesF > 0) {
+    println("El total de apariciones de la letra F es : "+totalF);
+  }
+  if (aparicionesG > 0) {
+    println("El total de apariciones de la letra G es : "+totalG);
+  }
+  if (aparicionesH > 0) {
+    println("El total de apariciones de la letra H es : "+totalH);
+  }
+  if (aparicionesI > 0) {
+    println("El total de apariciones de la letra I es : "+totalI);
+  }
+  if (aparicionesJ > 0) {
+    println("El total de apariciones de la letra J es : "+totalJ);
+  }
+  if (aparicionesK > 0) {
+    println("El total de apariciones de la letra K es : "+totalK);
+  }
+  if (aparicionesL > 0) {
+    println("El total de apariciones de la letra L es : "+totalL);
+  }
+  if (aparicionesM > 0) {
+    println("El total de apariciones de la letra M es : "+totalM);
+  }
+  if (aparicionesN > 0) {
+    println("El total de apariciones de la letra N es : "+totalN);
+  }
+  if (aparicionesNN > 0) {
+    println("El total de apariciones de la letra Ñ es : "+totalNN);
+  }
+  if (aparicionesO > 0) {
+    println("El total de apariciones de la letra O es : "+totalO);
+  }
+  if (aparicionesP > 0) {
+    println("El total de apariciones de la letra P es : "+totalP);
+  }
+  if (aparicionesQ > 0) {
+    println("El total de apariciones de la letra Q es : "+totalQ);
+  }
+  if (aparicionesR > 0) {
+    println("El total de apariciones de la letra R es : "+totalR);
+  }
+  if (aparicionesS > 0) {
+    println("El total de apariciones de la letra S es : "+totalS);
+  }
+  if (aparicionesT > 0) {
+    println("El total de apariciones de la letra T es : "+totalT);
+  }
+  if (aparicionesU > 0) {
+    println("El total de apariciones de la letra U es : "+totalU);
+  }
+  if (aparicionesV > 0) {
+    println("El total de apariciones de la letra V es : "+totalV);
+  }
+  if (aparicionesX > 0) {
+    println("El total de apariciones de la letra X es : "+totalX);
+  }
+  if (aparicionesY > 0) {
+    println("El total de apariciones de la letra Y es : "+totalY);
+  }
+  if (aparicionesZ > 0) {
+    println("El total de apariciones de la letra Z es : "+totalZ);
+  }
   
   aparicionesA=0;
   aparicionesB=0;
@@ -325,8 +385,10 @@ void lectorDeLetras(char[] arr, int plb) {
 }
 
 // Función
-void totales() {
- 
+void totales(String a, String b, String c) {
+  int total = totalValorNombre+totalValorApellidoPaterno+totalValorApellidoMaterno;
+  println("EL VALOR DE "+a.toUpperCase()+" "+b.toUpperCase()+" "+c.toUpperCase()+" ES: "+
+  totalValorNombre+"+"+totalValorApellidoPaterno+"+"+totalValorApellidoMaterno+"="+total);
 }
 
 // Función 
