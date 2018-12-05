@@ -6,9 +6,10 @@
 */
 
 // Variables para el nombre de la persona
-String nombre = "Antonio";
-String apellidoPaterno = "Díaz";
-String apellidoMaterno = "Pérez";
+String nombre = "Elohim";
+String apellidoPaterno = "Guevara";
+String apellidoMaterno = "Varela";
+String nombreCompleto = nombre+" "+apellidoPaterno+" "+apellidoMaterno;
 // Convetir la cadena en un arreglo de caracteres
 char[] arrNombre = nombre.toCharArray();
 char[] arrApellidoPaterno = apellidoPaterno.toCharArray();
@@ -34,10 +35,20 @@ int aparicionesA,aparicionesB,aparicionesC,aparicionesD,aparicionesE,apariciones
 int totalA,totalB,totalC,totalD,totalE,totalF,totalG,totalH,totalI,
     totalJ,totalK,totalL,totalM,totalN,totalNN,totalO,totalP,totalQ,
     totalR,totalS,totalT,totalU,totalV,totalX,totalY,totalZ = 0;
+int total = 0;
 // Me indica el valor del nombre completo
 int totalValorNombre,totalValorApellidoPaterno,totalValorApellidoMaterno = 0;
      
 String caracterNulo = "¡NO HAY VALORES DE ESTA LETRA!";
+
+// Variables para la fecha de nacimiento
+String dia = "10";
+String mes = "12";
+String ano = "1990";
+String fechaNacimiento = dia+"-"+mes+"-"+ano;
+char[] arrDia = dia.toCharArray();
+char[] arrMes = mes.toCharArray();
+char[] arrAno = ano.toCharArray();
 
 PFont fuente;
 PImage img;
@@ -55,6 +66,42 @@ void setup() {
   lectorDeLetras(arrApellidoPaterno, 2);
   lectorDeLetras(arrApellidoMaterno, 3);
   totales(nombre, apellidoPaterno, apellidoMaterno);
+  lectorDeFechaNacimiento(arrDia, arrMes, arrAno);
+}
+
+void lectorDeFechaNacimiento(char[] arrD, char[] arrM, char[] arrA) {
+  for (int cicloDia = 0; cicloDia < arrD.length; cicloDia++) {
+    if (arrD[cicloDia] == '0') {
+      println("Valor 0");
+    }
+    if (arrD[cicloDia] == '1') {
+      println("Valor 1");
+    }
+    if (arrD[cicloDia] == '2') {
+      println("Valor 2");
+    }
+    if (arrD[cicloDia] == '3') {
+      println("Valor 3");
+    }
+    if (arrD[cicloDia] == '4') {
+      println("Valor 4");
+    }
+    if (arrD[cicloDia] == '5') {
+      println("Valor 5");
+    }
+    if (arrD[cicloDia] == '6') {
+      println("Valor 6");
+    }
+    if (arrD[cicloDia] == '7') {
+      println("Valor 7");
+    }
+    if (arrD[cicloDia] == '8') {
+      println("Valor 8");
+    }
+    if (arrD[cicloDia] == '9') {
+      println("Valor 9");
+    }
+  }
 }
 
 // Función
@@ -386,9 +433,10 @@ void lectorDeLetras(char[] arr, int plb) {
 
 // Función
 void totales(String a, String b, String c) {
-  int total = totalValorNombre+totalValorApellidoPaterno+totalValorApellidoMaterno;
+  total = totalValorNombre+totalValorApellidoPaterno+totalValorApellidoMaterno;
   println("EL VALOR DE "+a.toUpperCase()+" "+b.toUpperCase()+" "+c.toUpperCase()+" ES: "+
   totalValorNombre+"+"+totalValorApellidoPaterno+"+"+totalValorApellidoMaterno+"="+total);
+  println("EL TALENTO NATURAL ES: "+total);
 }
 
 // Función 
@@ -438,10 +486,18 @@ void ll() {
 }
 
 // Función principal
-void draw() {
+void draw() { // Despliega el lienzo
   image(img, 0, 0);
-  float anchuraNombre = textWidth(nombre);
-  float posX = (1200 - anchuraNombre)/2;
+  float anchuraNombre = textWidth(nombreCompleto);
+  float posXanchuraNombre = (1200 - anchuraNombre)/2;
+  float anchuraTotal = textWidth("Nota Fundamental");
+  float posXanchuraTotal = (1200 - anchuraTotal)/2;
   fill(255);
-  text(nombre, posX, 100);
+  text(nombreCompleto, posXanchuraNombre, 100);
+  text("Talento Natural", posXanchuraTotal, 180);
+  // HACER RESPONSIVA ESTÁ PARTE DEL CÓDIGO
+  noStroke();
+  ellipse(width/2, height/2-130, 90, 90);
+  fill(0);
+  text(total, width/2-27, height/2-115);
 }
