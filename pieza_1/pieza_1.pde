@@ -6,9 +6,9 @@
 */
 
 // Variables para el nombre de la persona
-String nombre = "Elohim";
-String apellidoPaterno = "Guevara";
-String apellidoMaterno = "Varela";
+String nombre = "Rogelio";
+String apellidoPaterno = "Moringa";
+String apellidoMaterno = "Acevedo";
 String nombreCompleto = nombre+" "+apellidoPaterno+" "+apellidoMaterno;
 // Convetir la cadena en un arreglo de caracteres
 char[] arrNombre = nombre.toCharArray();
@@ -35,20 +35,31 @@ int aparicionesA,aparicionesB,aparicionesC,aparicionesD,aparicionesE,apariciones
 int totalA,totalB,totalC,totalD,totalE,totalF,totalG,totalH,totalI,
     totalJ,totalK,totalL,totalM,totalN,totalNN,totalO,totalP,totalQ,
     totalR,totalS,totalT,totalU,totalV,totalX,totalY,totalZ = 0;
-int total = 0;
+int totalNombreCompleto = 0;
 // Me indica el valor del nombre completo
 int totalValorNombre,totalValorApellidoPaterno,totalValorApellidoMaterno = 0;
      
 String caracterNulo = "¡NO HAY VALORES DE ESTA LETRA!";
 
 // Variables para la fecha de nacimiento
-String dia = "10";
+String dia = "05";
 String mes = "12";
 String ano = "1990";
 String fechaNacimiento = dia+"-"+mes+"-"+ano;
 char[] arrDia = dia.toCharArray();
 char[] arrMes = mes.toCharArray();
 char[] arrAno = ano.toCharArray();
+// Números
+int cero,uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve = 0;
+// Totales de los números
+int totalUno,totalDos,totalTres,totalCuatro,totalCinco,totalSeis,
+    totalSiete,totalOcho,totalNueve;
+// Totales de los tres componentes: día, mes y año.
+int totalDia, totalMes, totalAno = 0;
+int totalValorDia, totalValorMes, totalValorAno = 0;
+// Me indica que cantidad de veces aparece determinado número 
+int contadorUno,contadorDos,contadorTres,contadorCuatro, contadorCinco,
+    contadorSeis,contadorSiete,contadorOcho,contadorNueve = 0;
 
 PFont fuente;
 PImage img;
@@ -65,43 +76,267 @@ void setup() {
   lectorDeLetras(arrNombre, 1);
   lectorDeLetras(arrApellidoPaterno, 2);
   lectorDeLetras(arrApellidoMaterno, 3);
-  totales(nombre, apellidoPaterno, apellidoMaterno);
+  totalesNombre(nombre, apellidoPaterno, apellidoMaterno);
   lectorDeFechaNacimiento(arrDia, arrMes, arrAno);
+  totalesFecha();
 }
 
 void lectorDeFechaNacimiento(char[] arrD, char[] arrM, char[] arrA) {
   for (int cicloDia = 0; cicloDia < arrD.length; cicloDia++) {
     if (arrD[cicloDia] == '0') {
-      println("Valor 0");
+      //println("Valor de: "+cero);
     }
     if (arrD[cicloDia] == '1') {
-      println("Valor 1");
+      uno = 1;
+      //println("Valor de: "+uno);
+      contadorUno++;
+      totalUno = uno * contadorUno;
     }
     if (arrD[cicloDia] == '2') {
-      println("Valor 2");
+      dos = 2;
+      //println("Valor de: "+dos);
+      contadorDos++;
+      totalDos = dos * contadorDos;
     }
     if (arrD[cicloDia] == '3') {
-      println("Valor 3");
+      tres = 3;
+      //println("Valor de: "+tres);
+      contadorTres++;
+      totalTres = tres * contadorTres;
     }
     if (arrD[cicloDia] == '4') {
-      println("Valor 4");
+      cuatro = 4;
+      //println("Valor de: "+cuatro);
+      contadorCuatro++;
+      totalCuatro = cuatro * contadorCuatro;
     }
     if (arrD[cicloDia] == '5') {
-      println("Valor 5");
+      cinco = 5;
+      //println("Valor de: "+cinco);
+      contadorCinco++;
+      totalCinco = cinco * contadorCinco;
     }
     if (arrD[cicloDia] == '6') {
-      println("Valor 6");
+      seis = 6;
+      //println("Valor de: "+seis);
+      contadorSeis++;
+      totalSeis = seis * contadorSeis;
     }
     if (arrD[cicloDia] == '7') {
-      println("Valor 7");
+      siete = 7;
+      //println("Valor de: "+siete);
+      contadorSiete++;
+      totalSiete = siete * contadorSiete;
     }
     if (arrD[cicloDia] == '8') {
-      println("Valor 8");
+      ocho = 8;
+      //println("Valor de: "+ocho);
+      contadorOcho++;
+      totalOcho = ocho * contadorOcho;
     }
     if (arrD[cicloDia] == '9') {
-      println("Valor 9");
+      nueve = 9;
+      //println("Valor de: "+nueve);
+      contadorNueve++;
+      totalNueve = nueve * contadorNueve;
     }
   }
+  
+  totalDia = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
+  
+  totalUno=0;
+  totalDos=0;
+  totalTres=0;
+  totalCuatro=0;
+  totalCinco=0;
+  totalSeis=0;
+  totalSiete=0;
+  totalOcho=0;
+  totalNueve=0;
+  
+  uno=0;
+  dos=0;
+  tres=0;
+  cuatro=0;
+  cinco=0;
+  seis=0;
+  siete=0;
+  ocho=0;
+  nueve=0;
+  
+  for (int cicloMes = 0; cicloMes < arrM.length; cicloMes++) {
+    if (arrM[cicloMes] == '0') {
+      //println("Valor de: "+cero);
+    }
+    if (arrM[cicloMes] == '1') {
+      uno = 1;
+      //println("Valor de: "+uno);
+      contadorUno++;
+      totalUno = uno * contadorUno;
+    }
+    if (arrM[cicloMes] == '2') {
+      dos = 2;
+      //println("Valor de: "+dos);
+      contadorDos++;
+      totalDos = dos * contadorDos;
+    }
+    if (arrM[cicloMes] == '3') {
+      tres = 3;
+      //println("Valor de: "+tres);
+      contadorTres++;
+      totalTres = tres * contadorTres;
+    }
+    if (arrM[cicloMes] == '4') {
+      cuatro = 4;
+      //println("Valor de: "+cuatro);
+      contadorCuatro++;
+      totalCuatro = cuatro * contadorCuatro;
+    }
+    if (arrM[cicloMes] == '5') {
+      cinco = 5;
+      //println("Valor de: "+cinco);
+      contadorCinco++;
+      totalCinco = cinco * contadorCinco;
+    }
+    if (arrM[cicloMes] == '6') {
+      seis = 6;
+      //println("Valor de: "+seis);
+      contadorSeis++;
+      totalSeis = seis * contadorSeis;
+    }
+    if (arrM[cicloMes] == '7') {
+      siete = 7;
+      //println("Valor de: "+siete);
+      contadorSiete++;
+      totalSiete = siete * contadorSiete;
+    }
+    if (arrM[cicloMes] == '8') {
+      ocho = 8;
+      //println("Valor de: "+ocho);
+      contadorOcho++;
+      totalOcho = ocho * contadorOcho;
+    }
+    if (arrM[cicloMes] == '9') {
+      nueve = 9;
+      //println("Valor de: "+nueve);
+      contadorNueve++;
+      totalNueve = nueve * contadorNueve;
+    }
+  }
+  
+  totalMes = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
+  
+  totalUno=0;
+  totalDos=0;
+  totalTres=0;
+  totalCuatro=0;
+  totalCinco=0;
+  totalSeis=0;
+  totalSiete=0;
+  totalOcho=0;
+  totalNueve=0;
+  
+  uno=0;
+  dos=0;
+  tres=0;
+  cuatro=0;
+  cinco=0;
+  seis=0;
+  siete=0;
+  ocho=0;
+  nueve=0;
+  
+  for (int cicloAno = 0; cicloAno < arrA.length; cicloAno++) {
+    if (arrA[cicloAno] == '0') {
+      //println("Valor de: "+cero);
+    }
+    if (arrA[cicloAno] == '1') {
+      uno = 1;
+      //println("Valor de: "+uno);
+      contadorUno++;
+      totalUno = uno * contadorUno;
+    }
+    if (arrA[cicloAno] == '2') {
+      dos = 2;
+      //println("Valor de: "+dos);
+      contadorDos++;
+      totalDos = dos * contadorDos;
+    }
+    if (arrA[cicloAno] == '3') {
+      tres = 3;
+      
+      //println("Valor de: "+tres);
+      contadorTres++;
+      totalTres = tres * contadorTres;
+    }
+    if (arrA[cicloAno] == '4') {
+      cuatro = 4;
+      //println("Valor de: "+cuatro);
+      contadorCuatro++;
+      totalCuatro = cuatro * contadorCuatro;
+    }
+    if (arrA[cicloAno] == '5') {
+      cinco = 5;
+      //println("Valor de: "+cinco);
+      contadorCinco++;
+      totalCinco = cinco * contadorCinco;
+    }
+    if (arrA[cicloAno] == '6') {
+      seis = 6;
+      //println("Valor de: "+seis);
+      contadorSeis++;
+      totalSeis = seis * contadorSeis;
+    }
+    if (arrA[cicloAno] == '7') {
+      siete = 7;
+      //println("Valor de: "+siete);
+      contadorSiete++;
+      totalSiete = siete * contadorSiete;
+    }
+    if (arrA[cicloAno] == '8') {
+      ocho = 8;
+      //println("Valor de: "+ocho);
+      contadorOcho++;
+      totalOcho = ocho * contadorOcho;
+    }
+    if (arrA[cicloAno] == '9') {
+      nueve = 9;
+      //println("Valor de: "+nueve);
+      contadorNueve++;
+      totalNueve = nueve * contadorNueve;
+    }
+  }
+  
+  totalAno = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
+  
+  totalUno=0;
+  totalDos=0;
+  totalTres=0;
+  totalCuatro=0;
+  totalCinco=0;
+  totalSeis=0;
+  totalSiete=0;
+  totalOcho=0;
+  totalNueve=0;
+  
+  uno=0;
+  dos=0;
+  tres=0;
+  cuatro=0;
+  cinco=0;
+  seis=0;
+  siete=0;
+  ocho=0;
+  nueve=0;
+}
+
+void totalesFecha() {
+ totalValorDia = totalDia;
+ println("El valor del DÍA es: "+totalValorDia); 
+ totalValorMes = totalMes;
+ println("El valor del MES es: "+totalValorMes); 
+ totalValorAno = totalAno;
+ println("El valor del AÑO es: "+totalValorAno); 
 }
 
 // Función
@@ -275,7 +510,7 @@ void lectorDeLetras(char[] arr, int plb) {
       valorZ = z*aparicionesZ;
       totalZ = aparicionesZ;
     } else {
-      // Indica que es un espacio o es tulizado 
+      // Indica que es un espacio o es utulizado 
       // por algun otro caracter que no está
       // dentro de los parámetros establecidos.
       println(caracterNulo);    
@@ -432,11 +667,11 @@ void lectorDeLetras(char[] arr, int plb) {
 }
 
 // Función
-void totales(String a, String b, String c) {
-  total = totalValorNombre+totalValorApellidoPaterno+totalValorApellidoMaterno;
+void totalesNombre(String a, String b, String c) {
+  totalNombreCompleto = totalValorNombre+totalValorApellidoPaterno+totalValorApellidoMaterno;
   println("EL VALOR DE "+a.toUpperCase()+" "+b.toUpperCase()+" "+c.toUpperCase()+" ES: "+
-  totalValorNombre+"+"+totalValorApellidoPaterno+"+"+totalValorApellidoMaterno+"="+total);
-  println("EL TALENTO NATURAL ES: "+total);
+  totalValorNombre+"+"+totalValorApellidoPaterno+"+"+totalValorApellidoMaterno+"="+totalNombreCompleto);
+  println("EL TALENTO NATURAL ES: "+totalNombreCompleto);
 }
 
 // Función 
@@ -499,5 +734,5 @@ void draw() { // Despliega el lienzo
   noStroke();
   ellipse(width/2, height/2-130, 90, 90);
   fill(0);
-  text(total, width/2-27, height/2-115);
+  text(totalNombreCompleto, width/2-27, height/2-115);
 }
