@@ -1,7 +1,7 @@
 /*
 *  Autor: Elohim Guevara
 *
-*  pieza_1.pde
+*  esencia.pde
 *
 */
 
@@ -50,8 +50,6 @@ void setup() {
   lectorFN.fechaNacimiento();
   lectorFN.totalesFecha();
 }
-
-
 
 // Función principal
 void draw() { // Despliega el lienzo
