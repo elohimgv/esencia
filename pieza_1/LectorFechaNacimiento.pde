@@ -25,6 +25,7 @@ class LectorFechaNacimiento {
   int totalUno,totalDos,totalTres,totalCuatro,totalCinco,totalSeis,
       totalSiete,totalOcho,totalNueve;
   // Totales de los tres componentes: día, mes y año.
+  int total = 0;
   int totalDia, totalMes, totalAno = 0;
   int totalValorDia, totalValorMes, totalValorAno = 0;
   // Me indica que cantidad de veces aparece determinado número 
@@ -151,20 +152,38 @@ class LectorFechaNacimiento {
     nueve=0;
   }
   
+  void unDigito(int masDeUnDigito, String componente) {
+    println("El valor del ARMÓNICO del " +componente+ " es: "+masDeUnDigito);
+    String numeroComoCadena = Integer.toString(masDeUnDigito);
+    char[] unDigitoTotalValor = numeroComoCadena.toCharArray();
+    iterador(unDigitoTotalValor);
+    total = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
+    init();
+    println("El valor del " +componente+ " es: "+total);
+  }
+  
   // Método para cuantificar el valor del día
   // + mes + año, arrojando un valor total
   void totalesFecha() {
     totalValorDia = totalDia;
-    if (totalValorDia > 10) {
-      println("El valor del ARMÓNICO del DÍA es: "+totalValorDia);
-      //totalValorDia = str(totalValorDia);
-      println("El valor final del DÍA es: "+totalValorDia);
-     } else {
-       println("El valor del DÍA es: "+totalValorDia);
-     } 
-     totalValorMes = totalMes;
-     println("El valor del MES es: "+totalValorMes); 
-     totalValorAno = totalAno;
-     println("El valor del AÑO es: "+totalValorAno); 
-   }
+    if (totalValorDia > 9) {
+      unDigito(totalValorDia, "DÍA");
+    } else {
+      println("El valor del DÍA es: "+totalValorDia);
+    }
+    
+    totalValorMes = totalMes;
+    if (totalValorMes > 9) {
+      unDigito(totalValorMes, "MES");
+    } else {
+      println("El valor del MES es: "+totalValorMes);
+    } 
+    
+    totalValorAno = totalAno;
+    if (totalValorAno > 9) {
+      unDigito(totalValorAno, "AÑO");
+    } else {
+      println("El valor del AÑO es: "+totalValorAno);
+    } 
+  }
 }
