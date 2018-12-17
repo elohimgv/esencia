@@ -152,7 +152,7 @@ class LectorFechaNacimiento {
     nueve=0;
   }
   
-  void unDigito(int masDeUnDigito, String componente) {
+  int unDigito(int masDeUnDigito, String componente) {
     println("El valor del ARMÓNICO del " +componente+ " es: "+masDeUnDigito);
     String numeroComoCadena = Integer.toString(masDeUnDigito);
     char[] unDigitoTotalValor = numeroComoCadena.toCharArray();
@@ -160,30 +160,46 @@ class LectorFechaNacimiento {
     total = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
     init();
     println("El valor del " +componente+ " es: "+total);
+    return total;
   }
   
   // Método para cuantificar el valor del día
   // + mes + año, arrojando un valor total
   void totalesFecha() {
+    int ultimoTotalValorDia, ultimoTotalValorMes, ultimoTotalValorAno;
     totalValorDia = totalDia;
+    totalValorMes = totalMes;
+    totalValorAno = totalAno;
+    
     if (totalValorDia > 9) {
-      unDigito(totalValorDia, "DÍA");
+      ultimoTotalValorDia = unDigito(totalValorDia, "DÍA");
     } else {
-      println("El valor del DÍA es: "+totalValorDia);
+      ultimoTotalValorDia = totalValorDia;
+      println("El valor del DÍA es: "+ultimoTotalValorDia);
+    }
+     
+    if (totalValorMes > 9) {
+      ultimoTotalValorMes = unDigito(totalValorMes, "MES");
+    } else {
+      ultimoTotalValorMes = totalValorMes;
+      println("El valor del MES es: "+ultimoTotalValorMes);
+    } 
+    
+    if (totalValorAno > 9) {
+      ultimoTotalValorAno = unDigito(totalValorAno, "AÑO");
+    } else {
+      ultimoTotalValorAno = totalValorAno;
+      println("El valor del AÑO es: "+ultimoTotalValorAno);
     }
     
-    totalValorMes = totalMes;
-    if (totalValorMes > 9) {
-      unDigito(totalValorMes, "MES");
+    int urgenciaInterior;
+    int ur = ultimoTotalValorDia+ultimoTotalValorMes+ultimoTotalValorAno;
+    if (ur > 9) {
+      urgenciaInterior = unDigito(ur, "URGENCIA INTERIOR");
+      println("LA URGENCIA INTERIOR ES: "+urgenciaInterior);
     } else {
-      println("El valor del MES es: "+totalValorMes);
-    } 
-    
-    totalValorAno = totalAno;
-    if (totalValorAno > 9) {
-      unDigito(totalValorAno, "AÑO");
-    } else {
-      println("El valor del AÑO es: "+totalValorAno);
-    } 
+      urgenciaInterior = ur;
+      println("LA URGENCIA INTERIOR ES: "+urgenciaInterior);
+    }
   }
 }
