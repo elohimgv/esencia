@@ -153,13 +153,25 @@ class LectorFechaNacimiento {
   }
   
   int unDigito(int masDeUnDigito, String componente) {
-    println("El valor del ARMÓNICO del " +componente+ " es: "+masDeUnDigito);
+    if (componente == "DÍA" || componente == "MES" || componente == "año") {
+      println("El valor del ARMÓNICO del " +componente+ " es: "+masDeUnDigito);
+    }
+    else {
+      println("El valor del ARMÓNICO de la " +componente+ " es: "+masDeUnDigito);
+    }
+    
     String numeroComoCadena = Integer.toString(masDeUnDigito);
     char[] unDigitoTotalValor = numeroComoCadena.toCharArray();
     iterador(unDigitoTotalValor);
     total = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
     init();
-    println("El valor del " +componente+ " es: "+total);
+    
+    if (componente == "DÍA" || componente == "MES" || componente == "año") {
+      println("El valor del " +componente+ " es: "+total);
+    } else {
+      println("El valor de la " +componente+ " es: "+total);
+    }
+    
     return total;
   }
   
