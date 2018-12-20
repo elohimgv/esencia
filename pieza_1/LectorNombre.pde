@@ -4,9 +4,9 @@
 *  LectorNombre.pde
 *
 */
-
-class LectorNombre {
  
+class LectorNombre {
+  
   // Letra del alfabeto español ch y ll
   int encontrar_c;
   int encontrar_h;
@@ -33,6 +33,16 @@ class LectorNombre {
   int totalValorNombre,totalValorApellidoPaterno,totalValorApellidoMaterno = 0;
        
   String caracterNulo = "¡NO HAY VALORES DE ESTA LETRA!";
+  
+  // Números
+  int uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve = 0;
+  // Totales de los números
+  int totalUno,totalDos,totalTres,totalCuatro,totalCinco,totalSeis,
+      totalSiete,totalOcho,totalNueve;
+  int tota;
+  // Me indica que cantidad de veces aparece determinado número 
+  int contadorUno,contadorDos,contadorTres,contadorCuatro, contadorCinco,
+      contadorSeis,contadorSiete,contadorOcho,contadorNueve = 0;
   
   // Método para extraer el valor de cada letra,
   // dicha extracción se efectua del conjunto de
@@ -366,15 +376,144 @@ class LectorNombre {
     aparicionesZ=0;
   }
   
-  // Método para cuantificar el valor total
-  // del nombre completo de la persona.
-  void totalesNombre(String a, String b, String c) {
-    totalNombreCompleto = totalValorNombre+totalValorApellidoPaterno+totalValorApellidoMaterno;
-    println("EL VALOR DE "+a.toUpperCase()+" "+b.toUpperCase()+" "+c.toUpperCase()+" ES: "+
-    totalValorNombre+"+"+totalValorApellidoPaterno+"+"+totalValorApellidoMaterno+"="+totalNombreCompleto);
-    println("EL TALENTO NATURAL ES: "+totalNombreCompleto);
+  // Método que recorre el arreglo
+  int iterador(char[] x) {
+    for (int ciclo = 0; ciclo < x.length; ciclo++) {
+      if (x[ciclo] == '0') {
+        //println("Valor de: "+cero);
+      }
+      if (x[ciclo] == '1') {
+        uno = 1;
+        //println("Valor de: "+uno);
+        contadorUno++;
+        totalUno = uno * contadorUno;
+      }
+      if (x[ciclo] == '2') {
+        dos = 2;
+        //println("Valor de: "+dos);
+        contadorDos++;
+        totalDos = dos * contadorDos;
+      }
+      if (x[ciclo] == '3') {
+        tres = 3;
+        //println("Valor de: "+tres);
+        contadorTres++;
+        totalTres = tres * contadorTres;
+      }
+      if (x[ciclo] == '4') {
+        cuatro = 4;
+        //println("Valor de: "+cuatro);
+        contadorCuatro++;
+        totalCuatro = cuatro * contadorCuatro;
+      }
+      if (x[ciclo] == '5') {
+        cinco = 5;
+        //println("Valor de: "+cinco);
+        contadorCinco++;
+        totalCinco = cinco * contadorCinco;
+      }
+      if (x[ciclo] == '6') {
+        seis = 6;
+        //println("Valor de: "+seis);
+        contadorSeis++;
+        totalSeis = seis * contadorSeis;
+      }
+      if (x[ciclo] == '7') {
+        siete = 7;
+        //println("Valor de: "+siete);
+        contadorSiete++;
+        totalSiete = siete * contadorSiete;
+      }
+      if (x[ciclo] == '8') {
+        ocho = 8;
+        //println("Valor de: "+ocho);
+        contadorOcho++;
+        totalOcho = ocho * contadorOcho;
+      }
+      if (x[ciclo] == '9') {
+        nueve = 9;
+        //println("Valor de: "+nueve);
+        contadorNueve++;
+        totalNueve = nueve * contadorNueve;
+      }
+    }
+    
+    tota = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
+    
+    return tota;
   }
   
+  // Método para inicializar y asignar el valor 
+  // de cero en las variables.
+  void init() {
+    contadorUno=0;
+    contadorDos=0;
+    contadorTres=0;
+    contadorCuatro=0;
+    contadorCinco=0;
+    contadorSeis=0;
+    contadorSiete=0;
+    contadorOcho=0;
+    contadorNueve=0;
+    
+    totalUno=0;
+    totalDos=0;
+    totalTres=0;
+    totalCuatro=0;
+    totalCinco=0;
+    totalSeis=0;
+    totalSiete=0;
+    totalOcho=0;
+    totalNueve=0;
+    
+    uno=0;
+    dos=0;
+    tres=0;
+    cuatro=0;
+    cinco=0;
+    seis=0;
+    siete=0;
+    ocho=0;
+    nueve=0;
+  }
+  
+  // Método para reducir a una sola cifra el resultado final
+  int unDigito(int nombreCompleto) {
+    if (nombreCompleto < 10) {
+      return nombreCompleto;
+    } else {
+      if (true) {
+        println("El valor del ARMÓNICO del TALENTO NATURAL es: "+nombreCompleto);
+      }
+      String numeroComoCadena = Integer.toString(nombreCompleto);
+      char[] unDigitoTotalValor = numeroComoCadena.toCharArray();
+      int total = iterador(unDigitoTotalValor);
+      init();
+        
+      return unDigito(nombreCompleto-total);
+    } 
+  }
+  
+  // Método para cuantificar el valor total
+  // del nombre completo de la persona.
+  void totalesNombre() {
+    int talentoNatural;
+    totalNombreCompleto = totalValorNombre+totalValorApellidoPaterno+totalValorApellidoMaterno;
+    if (totalNombreCompleto > 9) {
+      talentoNatural = unDigito(totalNombreCompleto);
+      println();
+      println("EL TALENTO NATURAL ES: "+talentoNatural);
+      println();
+    } else {
+      talentoNatural = totalNombreCompleto;
+      println();
+      println("EL TALENTO NATURAL ES: "+talentoNatural);
+      println();
+    }
+  }
+  
+  // Método para desplegar en el sketch el 
+  // total del nombre completo 
   int tn() {
     return totalNombreCompleto;
   }
