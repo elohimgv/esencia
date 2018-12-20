@@ -25,7 +25,7 @@ class LectorFechaNacimiento {
   int totalUno,totalDos,totalTres,totalCuatro,totalCinco,totalSeis,
       totalSiete,totalOcho,totalNueve;
   // Totales de los tres componentes: día, mes y año.
-  int total = 0;
+  int t;
   int totalDia, totalMes, totalAno = 0;
   int totalValorDia, totalValorMes, totalValorAno = 0;
   // Me indica que cantidad de veces aparece determinado número 
@@ -38,25 +38,25 @@ class LectorFechaNacimiento {
     
     iterador(dia);
     
-    totalDia = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
+    totalDia = t;
     
     init();
     
     iterador(mes);
     
-    totalMes = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
+    totalMes = t;
     
     init();
     
     iterador(ano);
     
-    totalAno = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
+    totalAno = t;
     
     init();
   }
   
   // Método que recorre el arreglo
-  void iterador(char[] x) {
+  int iterador(char[] x) {
     for (int ciclo = 0; ciclo < x.length; ciclo++) {
       if (x[ciclo] == '0') {
         //println("Valor de: "+cero);
@@ -116,6 +116,10 @@ class LectorFechaNacimiento {
         totalNueve = nueve * contadorNueve;
       }
     }
+    
+    t = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
+    
+    return t;
   }
   
   // Método para inicializar y asignar el valor 
@@ -152,6 +156,7 @@ class LectorFechaNacimiento {
     nueve=0;
   }
   
+  // Método para reducir a una sola cifra el resultado final
   int unDigito(int masDeUnDigito, String componente) {
     if (componente == "DÍA" || componente == "MES" || componente == "año") {
       println("El valor del ARMÓNICO del " +componente+ " es: "+masDeUnDigito);
@@ -163,7 +168,7 @@ class LectorFechaNacimiento {
     String numeroComoCadena = Integer.toString(masDeUnDigito);
     char[] unDigitoTotalValor = numeroComoCadena.toCharArray();
     iterador(unDigitoTotalValor);
-    total = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
+    int total = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
     init();
     
     if (componente == "DÍA" || componente == "MES" || componente == "año") {
@@ -208,10 +213,14 @@ class LectorFechaNacimiento {
     int ur = ultimoTotalValorDia+ultimoTotalValorMes+ultimoTotalValorAno;
     if (ur > 9) {
       urgenciaInterior = unDigito(ur, "URGENCIA INTERIOR");
+      println();
       println("LA URGENCIA INTERIOR ES: "+urgenciaInterior);
+      println();
     } else {
       urgenciaInterior = ur;
+      println();
       println("LA URGENCIA INTERIOR ES: "+urgenciaInterior);
+      println();
     }
   }
 }
