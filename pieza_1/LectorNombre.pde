@@ -11,23 +11,23 @@ class LectorNombre {
   int encontrar_c;
   int encontrar_h;
   // Resto de letras del alfabeto español
-  int a,b,c,d,e,f,g,h,i,j,k,l,m,n,nn,o,p,q,r,s,t,u,v,x,y,z;
+  int a,b,c,d,e,f,g,h,i,j,k,l,m,n,nn,o,p,q,r,s,t,u,v,w,x,y,z;
   // Variables para conocer la suma (valor) individual del nombre, apellido
   // paterno y apellido materno, y la suma total de los tres componentes
   int valorA,valorB,valorC,valorD,valorE,valorF,valorG,valorH,valorI,valorJ,valorK,
   valorL,valorM,valorN,valorNN,valorO,valorP,valorQ,valorR,valorS,valorT,valorU,valorV,
-  valorX,valorY,valorZ = 0;
+  valorW,valorX,valorY,valorZ = 0;
   // Me indica que cantidad de veces aparece determinada letra en cada uno de los tres
   // componenentes: nombre, apellido paterno y apellido materno; también, la suma
   // total de los tres componentes.
   int aparicionesA,aparicionesB,aparicionesC,aparicionesD,aparicionesE,aparicionesF,
       aparicionesG,aparicionesH,aparicionesI,aparicionesJ,aparicionesK,aparicionesL,
       aparicionesM,aparicionesN,aparicionesNN,aparicionesO,aparicionesP,aparicionesQ,
-      aparicionesR,aparicionesS,aparicionesT,aparicionesU,aparicionesV,aparicionesX,
-      aparicionesY,aparicionesZ = 0;
+      aparicionesR,aparicionesS,aparicionesT,aparicionesU,aparicionesV,aparicionesW,
+      aparicionesX,aparicionesY,aparicionesZ = 0;
   int totalA,totalB,totalC,totalD,totalE,totalF,totalG,totalH,totalI,
       totalJ,totalK,totalL,totalM,totalN,totalNN,totalO,totalP,totalQ,
-      totalR,totalS,totalT,totalU,totalV,totalX,totalY,totalZ = 0;
+      totalR,totalS,totalT,totalU,totalV,totalW,totalX,totalY,totalZ = 0;
   int totalNombreCompleto = 0;
   // Me indica el valor del nombre completo
   int totalValorNombre,totalValorApellidoPaterno,totalValorApellidoMaterno = 0;
@@ -197,22 +197,28 @@ class LectorNombre {
         aparicionesV++;
         valorV = v*aparicionesV;
         totalV = aparicionesV;
+      } else if (arr[ciclo] == 'w' || arr[ciclo] == 'W') {
+        println("El valor de w/W es 8.");
+        w = 8;
+        aparicionesW++;
+        valorW = w*aparicionesW;
+        totalW = aparicionesW; 
       } else if (arr[ciclo] == 'x' || arr[ciclo] == 'X') {
-        println("El valor de x/X es 8.");
-        x = 8;
+        println("El valor de x/X es 9.");
+        x = 9;
         aparicionesX++;
         valorX = x*aparicionesX;
         totalX = aparicionesX;
       } else if (arr[ciclo] == 'y' || arr[ciclo] == 'Y') {
-        println("El valor de y/Y es 9.");
-        y = 9;
+        println("El valor de y/Y es 1.");
+        y = 1;
         aparicionesY++;
         valorY = y*aparicionesY;
         totalY = aparicionesY;
         // 4ta escala
       } else if (arr[ciclo] == 'z' || arr[ciclo] == 'Z') {
-        println("El valor de z/Z es 1.");
-        z = 1;
+        println("El valor de z/Z es 2.");
+        z = 2;
         aparicionesZ++;
         valorZ = z*aparicionesZ;
         totalZ = aparicionesZ;
@@ -490,7 +496,7 @@ class LectorNombre {
       int total = iterador(unDigitoTotalValor);
       init();
         
-      return unDigito(nombreCompleto-total);
+      return unDigito(total);
     } 
   }
   
