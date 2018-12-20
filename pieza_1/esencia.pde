@@ -6,9 +6,9 @@
 */
 
 // Variables para el nombre de la persona
-String nombre = "Rubí Alejandra";
-String apellidoPaterno = "Gutierrez";
-String apellidoMaterno = "Venegas";
+String nombre = "Elohim";
+String apellidoPaterno = "Guevara";
+String apellidoMaterno = "Varela";
 String nombreCompleto = nombre+" "+apellidoPaterno+" "+apellidoMaterno;
 // Convetir la cadena en un arreglo de caracteres
 char[] arrNombre = nombre.toCharArray();
@@ -16,9 +16,9 @@ char[] arrApellidoPaterno = apellidoPaterno.toCharArray();
 char[] arrApellidoMaterno = apellidoMaterno.toCharArray();
 
 // Variables para la fecha de nacimiento
-String dia = "21";
+String dia = "09";
 String mes = "09";
-String ano = "2005";
+String ano = "1987";
 String fechaNacimiento = dia+"-"+mes+"-"+ano;
 char[] arrDia = dia.toCharArray();
 char[] arrMes = mes.toCharArray();
@@ -46,7 +46,7 @@ void setup() {
   lectorN.lectorNombre(arrNombre, 1);
   lectorN.lectorNombre(arrApellidoPaterno, 2);
   lectorN.lectorNombre(arrApellidoMaterno, 3);
-  lectorN.totalesNombre(nombre, apellidoPaterno, apellidoMaterno);
+  lectorN.totalesNombre();
   lectorFN.fechaNacimiento();
   lectorFN.totalesFecha();
 }
