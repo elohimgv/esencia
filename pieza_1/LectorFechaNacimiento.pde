@@ -32,8 +32,8 @@ class LectorFechaNacimiento {
   int contadorUno,contadorDos,contadorTres,contadorCuatro, contadorCinco,
       contadorSeis,contadorSiete,contadorOcho,contadorNueve = 0;
   
-  // Método para asignar los valores a cada variable,
-  // así como el total de apariciones de la misma.
+  // Método que itera sobre cada uno de los 
+  // componentes de la fecha de nacimiento
   void fechaNacimiento() {
     
     iterador(dia);
@@ -58,63 +58,65 @@ class LectorFechaNacimiento {
   // Método que recorre el arreglo
   int iterador(char[] x) {
     for (int ciclo = 0; ciclo < x.length; ciclo++) {
-      if (x[ciclo] == '0') {
-        //println("Valor de: "+cero);
-      }
-      if (x[ciclo] == '1') {
-        uno = 1;
-        //println("Valor de: "+uno);
-        contadorUno++;
-        totalUno = uno * contadorUno;
-      }
-      if (x[ciclo] == '2') {
-        dos = 2;
-        //println("Valor de: "+dos);
-        contadorDos++;
-        totalDos = dos * contadorDos;
-      }
-      if (x[ciclo] == '3') {
-        tres = 3;
-        //println("Valor de: "+tres);
-        contadorTres++;
-        totalTres = tres * contadorTres;
-      }
-      if (x[ciclo] == '4') {
-        cuatro = 4;
-        //println("Valor de: "+cuatro);
-        contadorCuatro++;
-        totalCuatro = cuatro * contadorCuatro;
-      }
-      if (x[ciclo] == '5') {
-        cinco = 5;
-        //println("Valor de: "+cinco);
-        contadorCinco++;
-        totalCinco = cinco * contadorCinco;
-      }
-      if (x[ciclo] == '6') {
-        seis = 6;
-        //println("Valor de: "+seis);
-        contadorSeis++;
-        totalSeis = seis * contadorSeis;
-      }
-      if (x[ciclo] == '7') {
-        siete = 7;
-        //println("Valor de: "+siete);
-        contadorSiete++;
-        totalSiete = siete * contadorSiete;
-      }
-      if (x[ciclo] == '8') {
-        ocho = 8;
-        //println("Valor de: "+ocho);
-        contadorOcho++;
-        totalOcho = ocho * contadorOcho;
-      }
-      if (x[ciclo] == '9') {
-        nueve = 9;
-        //println("Valor de: "+nueve);
-        contadorNueve++;
-        totalNueve = nueve * contadorNueve;
-      }
+      switch(x[ciclo]) {
+        case '0':
+          //println("Valor de: "+cero);
+          break;
+        case '1':
+          uno = 1;
+          //println("Valor de: "+uno);
+          contadorUno++;
+          totalUno = uno * contadorUno;
+          break;
+        case '2':
+          dos = 2;
+          //println("Valor de: "+dos);
+          contadorDos++;
+          totalDos = dos * contadorDos;
+          break;
+        case '3':
+          tres = 3;
+          //println("Valor de: "+tres);
+          contadorTres++;
+          totalTres = tres * contadorTres;
+          break;
+        case '4':
+          cuatro = 4;
+          //println("Valor de: "+cuatro);
+          contadorCuatro++;
+          totalCuatro = cuatro * contadorCuatro;
+          break;
+        case '5':
+          cinco = 5;
+          //println("Valor de: "+cinco);
+          contadorCinco++;
+          totalCinco = cinco * contadorCinco;
+          break;
+        case '6':
+          seis = 6;
+          //println("Valor de: "+seis);
+          contadorSeis++;
+          totalSeis = seis * contadorSeis;
+          break;
+        case '7':
+          siete = 7;
+          //println("Valor de: "+siete);
+          contadorSiete++;
+          totalSiete = siete * contadorSiete;
+          break;
+        case '8':
+          ocho = 8;
+          //println("Valor de: "+ocho);
+          contadorOcho++;
+          totalOcho = ocho * contadorOcho;
+          break;
+        case '9':
+          nueve = 9;
+          //println("Valor de: "+nueve);
+          contadorNueve++;
+          totalNueve = nueve * contadorNueve;
+          break;
+       }
     }
     
     t = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
