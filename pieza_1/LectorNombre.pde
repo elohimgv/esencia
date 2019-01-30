@@ -29,8 +29,13 @@ class LectorNombre {
       totalJ,totalK,totalL,totalM,totalN,totalNN,totalO,totalP,totalQ,
       totalR,totalS,totalT,totalU,totalV,totalW,totalX,totalY,totalZ = 0;
   int totalNombreCompleto = 0;
-  // Me indica el valor del nombre completo
+  // Variables para el valor del nombre completo
   int totalValorNombre,totalValorApellidoPaterno,totalValorApellidoMaterno = 0;
+  // Variables para el valor de las consonantes y vocales
+  int totalValorVocalesNombre, totalValorConsonantesNombre;
+  int totalValorVocalesApellidoPaterno, totalValorConsonantesApellidoPaterno;
+  int totalValorVocalesApellidoMaterno, totalValorConsonantesApellidoMaterno;
+  int totalVocalesNombreCompleto, totalConsonatesNombreCompleto;
        
   String caracterNulo = "¡NO HAY VALORES DE ESTA LETRA!";
   
@@ -243,24 +248,28 @@ class LectorNombre {
     
     if (plb == 1) {
       println("EL VALOR DE LAS VOCALES DEL NOMBRE ES: "+vocales);
+      totalValorVocalesNombre = vocales;
       println("EL VALOR DE LAS VOCALES DEL NOMBRE ES: "+consonantes);
+      totalValorConsonantesNombre = consonantes;
       println("El valor del NOMBRE es: "+totalValorPalabra);
       totalValorNombre = totalValorPalabra;
     }
     if (plb == 2) {
       println("EL VALOR DE LAS VOCALES DEL APELLIDO PATERNO ES: "+vocales);
+      totalValorVocalesApellidoPaterno = vocales; 
       println("EL VALOR DE LAS VOCALES DEL APELLIDO PATERNO ES: "+consonantes);
+      totalValorConsonantesApellidoPaterno = consonantes;
       println("El valor del APELLIDO PATERNO es: "+totalValorPalabra);
       totalValorApellidoPaterno = totalValorPalabra;
     }
     if (plb == 3) {
       println("EL VALOR DE LAS VOCALES DEL APELLIDO MATERNO ES: "+vocales);
+      totalValorVocalesApellidoMaterno = vocales; 
       println("EL VALOR DE LAS VOCALES DEL APELLIDO MATERNO ES: "+consonantes);
+      totalValorConsonantesApellidoMaterno = consonantes;
       println("El valor del APELLIDO MATERNO es: "+totalValorPalabra);
       totalValorApellidoMaterno = totalValorPalabra;
     }
-    
-    
     
     valorA=0;
     valorB=0;
@@ -518,6 +527,27 @@ class LectorNombre {
   // Método para cuantificar el valor total
   // del nombre completo de la persona.
   void totalesNombre() {
+    int temporalVocales, temporalConsonantes;
+    
+    totalVocalesNombreCompleto = totalValorVocalesNombre+totalValorVocalesApellidoPaterno+totalValorVocalesApellidoMaterno;
+    totalConsonatesNombreCompleto = totalValorConsonantesNombre+totalValorConsonantesApellidoPaterno+totalValorConsonantesApellidoMaterno;
+    
+    if (totalVocalesNombreCompleto > 9 || totalConsonatesNombreCompleto > 9) {
+      temporalVocales = unDigito(totalVocalesNombreCompleto);
+      temporalConsonantes = unDigito(totalConsonatesNombreCompleto);
+      println();
+      println("EL VALOR TOTAL DE LAS VOCALES ES: "+temporalVocales);
+      println("EL VALOR TOTAL DE LAS CONSONANTES ES: "+temporalConsonantes);
+      println();
+    } else {
+      temporalVocales = totalVocalesNombreCompleto;
+      temporalConsonantes = totalConsonatesNombreCompleto;
+      println();
+      println("EL VALOR TOTAL DE LAS VOCALES ES: "+temporalVocales);
+      println("EL VALOR TOTAL DE LAS CONSONANTES ES: "+temporalConsonantes);
+      println();
+    }
+    
     int talentoNatural;
     totalNombreCompleto = totalValorNombre+totalValorApellidoPaterno+totalValorApellidoMaterno;
     if (totalNombreCompleto > 9) {
