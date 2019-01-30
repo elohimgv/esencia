@@ -236,7 +236,10 @@ class LectorNombre {
         valorU+valorV+valorX+valorY+valorZ;
         
     int vocales = valorA+valorE+valorI+valorO+valorU;
-    int consonantes = valorB+valorC+valorD+valorF+valorG+valorH+valorJ+valorK+valorL+valorM+valorN+valorNN+valorP+valorQ+valorR+valorS+valorT+valorV+valorX+valorY+valorZ;
+    int consonantes = valorB+valorC+valorD+valorF+valorG+
+                      valorH+valorJ+valorK+valorL+valorM+
+                      valorN+valorNN+valorP+valorQ+valorR+
+                      valorS+valorT+valorV+valorX+valorY+valorZ;
     
     if (plb == 1) {
       println("EL VALOR DE LAS VOCALES DEL NOMBRE ES: "+vocales);
@@ -245,10 +248,14 @@ class LectorNombre {
       totalValorNombre = totalValorPalabra;
     }
     if (plb == 2) {
+      println("EL VALOR DE LAS VOCALES DEL APELLIDO PATERNO ES: "+vocales);
+      println("EL VALOR DE LAS VOCALES DEL APELLIDO PATERNO ES: "+consonantes);
       println("El valor del APELLIDO PATERNO es: "+totalValorPalabra);
       totalValorApellidoPaterno = totalValorPalabra;
     }
     if (plb == 3) {
+      println("EL VALOR DE LAS VOCALES DEL APELLIDO MATERNO ES: "+vocales);
+      println("EL VALOR DE LAS VOCALES DEL APELLIDO MATERNO ES: "+consonantes);
       println("El valor del APELLIDO MATERNO es: "+totalValorPalabra);
       totalValorApellidoMaterno = totalValorPalabra;
     }
