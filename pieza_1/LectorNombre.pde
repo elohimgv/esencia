@@ -15,8 +15,8 @@ class LectorNombre {
   // Variables para conocer la suma (valor) individual del nombre, apellido
   // paterno y apellido materno, y la suma total de los tres componentes
   int valorA,valorB,valorC,valorD,valorE,valorF,valorG,valorH,valorI,valorJ,valorK,
-  valorL,valorM,valorN,valorNN,valorO,valorP,valorQ,valorR,valorS,valorT,valorU,valorV,
-  valorW,valorX,valorY,valorZ = 0;
+      valorL,valorM,valorN,valorNN,valorO,valorP,valorQ,valorR,valorS,valorT,valorU,valorV,
+      valorW,valorX,valorY,valorZ = 0;
   // Me indica que cantidad de veces aparece determinada letra en cada uno de los tres
   // componenentes: nombre, apellido paterno y apellido materno; también, la suma
   // total de los tres componentes.
@@ -234,7 +234,13 @@ class LectorNombre {
     int totalValorPalabra = valorA+valorB+valorC+valorD+valorE+valorF+valorG+valorH+valorI+
         valorJ+valorK+valorL+valorM+valorN+valorNN+valorO+valorP+valorQ+valorR+valorS+valorT+
         valorU+valorV+valorX+valorY+valorZ;
+        
+    int vocales = valorA+valorE+valorI+valorO+valorU;
+    int consonantes = valorB+valorC+valorD+valorF+valorG+valorH+valorJ+valorK+valorL+valorM+valorN+valorNN+valorP+valorQ+valorR+valorS+valorT+valorV+valorX+valorY+valorZ;
+    
     if (plb == 1) {
+      println("EL VALOR DE LAS VOCALES DEL NOMBRE ES: "+vocales);
+      println("EL VALOR DE LAS VOCALES DEL NOMBRE ES: "+consonantes);
       println("El valor del NOMBRE es: "+totalValorPalabra);
       totalValorNombre = totalValorPalabra;
     }
@@ -246,6 +252,8 @@ class LectorNombre {
       println("El valor del APELLIDO MATERNO es: "+totalValorPalabra);
       totalValorApellidoMaterno = totalValorPalabra;
     }
+    
+    
     
     valorA=0;
     valorB=0;
