@@ -39,6 +39,7 @@ class LectorNombre {
   // Variables para los números pares e impares
   int numeroParNombre, numeroParApellidoPaterno, numeroParApellidoMaterno;
   int numeroImparNombre, numeroImparApellidoPaterno, numeroImparApellidoMaterno;
+  int totalNumeroImparNombreCompleto,totalNumeroParNombreCompleto;
        
   String caracterNulo = "¡NO HAY VALORES DE ESTA LETRA!";
   
@@ -240,8 +241,8 @@ class LectorNombre {
     
     // Totales
     int totalValorPalabra = valorA+valorB+valorC+valorD+valorE+valorF+valorG+valorH+valorI+
-        valorJ+valorK+valorL+valorM+valorN+valorNN+valorO+valorP+valorQ+valorR+valorS+valorT+
-        valorU+valorV+valorX+valorY+valorZ;
+                            valorJ+valorK+valorL+valorM+valorN+valorNN+valorO+valorP+valorQ+
+                            valorR+valorS+valorT+valorU+valorV+valorX+valorY+valorZ;
         
     int vocales = valorA+valorE+valorI+valorO+valorU;
     int consonantes = valorB+valorC+valorD+valorF+valorG+
@@ -572,8 +573,10 @@ class LectorNombre {
   // Método para cuantificar el valor total
   // del nombre completo de la persona.
   void totalesNombre() {
-    //println("TOTAL APARICIONES DE IMPARES ES: "+impares);
-    //println("TOTAL APARICIONES DE PARES ES: "+pares);
+    totalNumeroImparNombreCompleto = numeroImparNombre+numeroImparApellidoPaterno+numeroImparApellidoMaterno;
+    totalNumeroParNombreCompleto = numeroParNombre+numeroParApellidoPaterno+numeroParApellidoMaterno;
+    println("TOTAL NÚMERO IMPARES EN EL NOMBRE COMPLETO ES: "+totalNumeroImparNombreCompleto);
+    println("TOTAL NÚMERO PARES EN EL NOMBRE COMPLETO ES: "+totalNumeroParNombreCompleto);
     
     int temporalVocales, temporalConsonantes;
     
