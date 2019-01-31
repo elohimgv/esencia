@@ -553,20 +553,19 @@ class LectorNombre {
   }
   
   // Método para reducir a una sola cifra el resultado final
-  int unDigito(int nombreCompleto) {
-    if (nombreCompleto < 10) {
-      return nombreCompleto;
+  int unDigito(int cantidad_a_reducir, String componente) {
+    if (cantidad_a_reducir < 10) {
+      return cantidad_a_reducir;
     } else {
-      if (true) {
-        ///// Aqui falta un cambio en el println con las consonantes y las vocales /////
-        println("El valor del ARMÓNICO del TALENTO NATURAL es: "+nombreCompleto);
+      if (componente == "VOCALES" || componente == "CONSONANTES" || componente == "TALENTO NATURAL") {
+        println("El valor del ARMÓNICO de "+componente+" es: "+cantidad_a_reducir);
       }
-      String numeroComoCadena = Integer.toString(nombreCompleto);
+      String numeroComoCadena = Integer.toString(cantidad_a_reducir);
       char[] unDigitoTotalValor = numeroComoCadena.toCharArray();
       int total = iterador(unDigitoTotalValor);
       init();
         
-      return unDigito(total);
+      return unDigito(total, componente);
     } 
   }
   
@@ -575,8 +574,10 @@ class LectorNombre {
   void totalesNombre() {
     totalNumeroImparNombreCompleto = numeroImparNombre+numeroImparApellidoPaterno+numeroImparApellidoMaterno;
     totalNumeroParNombreCompleto = numeroParNombre+numeroParApellidoPaterno+numeroParApellidoMaterno;
+    println();
     println("TOTAL NÚMERO IMPARES EN EL NOMBRE COMPLETO ES: "+totalNumeroImparNombreCompleto);
     println("TOTAL NÚMERO PARES EN EL NOMBRE COMPLETO ES: "+totalNumeroParNombreCompleto);
+    println();
     
     int temporalVocales, temporalConsonantes;
     
@@ -584,8 +585,8 @@ class LectorNombre {
     totalConsonatesNombreCompleto = totalValorConsonantesNombre+totalValorConsonantesApellidoPaterno+totalValorConsonantesApellidoMaterno;
     
     if (totalVocalesNombreCompleto > 9 || totalConsonatesNombreCompleto > 9) {
-      temporalVocales = unDigito(totalVocalesNombreCompleto);
-      temporalConsonantes = unDigito(totalConsonatesNombreCompleto);
+      temporalVocales = unDigito(totalVocalesNombreCompleto, "VOCALES");
+      temporalConsonantes = unDigito(totalConsonatesNombreCompleto, "CONSONANTES");
       println();
       println("EL VALOR TOTAL DE LAS VOCALES ES: "+temporalVocales);
       println("EL VALOR TOTAL DE LAS CONSONANTES ES: "+temporalConsonantes);
@@ -602,7 +603,7 @@ class LectorNombre {
     int talentoNatural;
     totalNombreCompleto = totalValorNombre+totalValorApellidoPaterno+totalValorApellidoMaterno;
     if (totalNombreCompleto > 9) {
-      talentoNatural = unDigito(totalNombreCompleto);
+      talentoNatural = unDigito(totalNombreCompleto, "TALENTO NATURAL");
       println();
       println("EL TALENTO NATURAL ES: "+talentoNatural);
       println();
