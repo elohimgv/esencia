@@ -36,6 +36,9 @@ class LectorNombre {
   int totalValorVocalesApellidoPaterno, totalValorConsonantesApellidoPaterno;
   int totalValorVocalesApellidoMaterno, totalValorConsonantesApellidoMaterno;
   int totalVocalesNombreCompleto, totalConsonatesNombreCompleto;
+  // Variables para los números pares e impares
+  int numeroParNombre, numeroParApellidoPaterno, numeroParApellidoMaterno;
+  int numeroImparNombre, numeroImparApellidoPaterno, numeroImparApellidoMaterno;
        
   String caracterNulo = "¡NO HAY VALORES DE ESTA LETRA!";
   
@@ -245,8 +248,15 @@ class LectorNombre {
                       valorH+valorJ+valorK+valorL+valorM+
                       valorN+valorNN+valorP+valorQ+valorR+
                       valorS+valorT+valorV+valorX+valorY+valorZ;
+                      
+    int pares = totalB+totalE+totalG+totalJ+totalL+totalM+totalNN+totalQ+totalS+totalU+totalW+totalZ;
+    int impares = totalA+totalC+totalD+totalF+totalH+totalI+totalK+totalN+totalO+totalP+totalR+totalT+totalV+totalX+totalY;
     
     if (plb == 1) {
+      println("EL NÚMERO DE IMPARES EN EL NOMBRE ES: "+impares);
+      numeroImparNombre = impares;
+      println("EL NÚMERO DE PARES EN EL NOMBRE ES: "+pares);
+      numeroParNombre = pares;
       println("EL VALOR DE LAS VOCALES DEL NOMBRE ES: "+vocales);
       totalValorVocalesNombre = vocales;
       println("EL VALOR DE LAS VOCALES DEL NOMBRE ES: "+consonantes);
@@ -255,6 +265,10 @@ class LectorNombre {
       totalValorNombre = totalValorPalabra;
     }
     if (plb == 2) {
+      println("EL NÚMERO DE IMPARES EN EL NOMBRE ES: "+impares);
+      numeroImparApellidoPaterno = impares;
+      println("EL NÚMERO DE PARES EN EL NOMBRE ES: "+pares);
+      numeroParApellidoPaterno = pares;
       println("EL VALOR DE LAS VOCALES DEL APELLIDO PATERNO ES: "+vocales);
       totalValorVocalesApellidoPaterno = vocales; 
       println("EL VALOR DE LAS VOCALES DEL APELLIDO PATERNO ES: "+consonantes);
@@ -263,6 +277,10 @@ class LectorNombre {
       totalValorApellidoPaterno = totalValorPalabra;
     }
     if (plb == 3) {
+      println("EL NÚMERO DE IMPARES EN EL NOMBRE ES: "+impares);
+      numeroImparApellidoMaterno = impares;
+      println("EL NÚMERO DE PARES EN EL NOMBRE ES: "+pares);
+      numeroParApellidoMaterno = pares;
       println("EL VALOR DE LAS VOCALES DEL APELLIDO MATERNO ES: "+vocales);
       totalValorVocalesApellidoMaterno = vocales; 
       println("EL VALOR DE LAS VOCALES DEL APELLIDO MATERNO ES: "+consonantes);
@@ -404,6 +422,32 @@ class LectorNombre {
     aparicionesX=0;
     aparicionesY=0;
     aparicionesZ=0;
+    
+    totalA=0;
+    totalB=0;
+    totalC=0;
+    totalD=0;
+    totalE=0;
+    totalF=0;
+    totalG=0;
+    totalH=0;
+    totalI=0;
+    totalJ=0;
+    totalK=0;
+    totalL=0;
+    totalM=0;
+    totalN=0;
+    totalO=0;
+    totalP=0;
+    totalQ=0;
+    totalR=0;
+    totalS=0;
+    totalT=0;
+    totalU=0;
+    totalV=0;
+    totalX=0;
+    totalY=0;
+    totalZ=0;
   }
   
   // Método que recorre el arreglo
@@ -513,6 +557,7 @@ class LectorNombre {
       return nombreCompleto;
     } else {
       if (true) {
+        ///// Aqui falta un cambio en el println con las consonantes y las vocales /////
         println("El valor del ARMÓNICO del TALENTO NATURAL es: "+nombreCompleto);
       }
       String numeroComoCadena = Integer.toString(nombreCompleto);
@@ -527,6 +572,9 @@ class LectorNombre {
   // Método para cuantificar el valor total
   // del nombre completo de la persona.
   void totalesNombre() {
+    //println("TOTAL APARICIONES DE IMPARES ES: "+impares);
+    //println("TOTAL APARICIONES DE PARES ES: "+pares);
+    
     int temporalVocales, temporalConsonantes;
     
     totalVocalesNombreCompleto = totalValorVocalesNombre+totalValorVocalesApellidoPaterno+totalValorVocalesApellidoMaterno;
