@@ -28,6 +28,7 @@ class LectorFechaNacimiento {
   int t;
   int totalDia, totalMes, totalAno = 0;
   int totalValorDia, totalValorMes, totalValorAno = 0;
+  int urgenciaInterior = 0;
   // Me indica que cantidad de veces aparece determinado número 
   int contadorUno,contadorDos,contadorTres,contadorCuatro, contadorCinco,
       contadorSeis,contadorSiete,contadorOcho,contadorNueve = 0;
@@ -211,7 +212,7 @@ class LectorFechaNacimiento {
       println("El valor del AÑO es: "+ultimoTotalValorAno);
     }
     
-    int urgenciaInterior;
+    //int urgenciaInterior;
     int ur = ultimoTotalValorDia+ultimoTotalValorMes+ultimoTotalValorAno;
     if (ur > 9) {
       urgenciaInterior = unDigito(ur, "URGENCIA INTERIOR");
@@ -224,5 +225,11 @@ class LectorFechaNacimiento {
       println("LA URGENCIA INTERIOR ES: "+urgenciaInterior);
       println();
     }
+  }
+  
+  // Método para desplegar en el sketch el 
+  // total de la fecha de nacimiento (urgencia interior).
+  int tn() {
+    return urgenciaInterior;
   }
 }
