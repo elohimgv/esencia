@@ -28,7 +28,7 @@ class LectorNombre {
   int totalA,totalB,totalC,totalD,totalE,totalF,totalG,totalH,totalI,
       totalJ,totalK,totalL,totalM,totalN,totalNN,totalO,totalP,totalQ,
       totalR,totalS,totalT,totalU,totalV,totalW,totalX,totalY,totalZ = 0;
-  int totalNombreCompleto = 0;
+  int talentoNatural = 0;
   // Variables para el valor del nombre completo
   int totalValorNombre,totalValorApellidoPaterno,totalValorApellidoMaterno = 0;
   // Variables para el valor de las consonantes y vocales
@@ -600,8 +600,7 @@ class LectorNombre {
       println();
     }
     
-    int talentoNatural;
-    totalNombreCompleto = totalValorNombre+totalValorApellidoPaterno+totalValorApellidoMaterno;
+    int totalNombreCompleto = totalValorNombre+totalValorApellidoPaterno+totalValorApellidoMaterno;
     if (totalNombreCompleto > 9) {
       talentoNatural = unDigito(totalNombreCompleto, "TALENTO NATURAL");
       println();
@@ -616,9 +615,9 @@ class LectorNombre {
   }
   
   // Método para desplegar en el sketch el 
-  // total del nombre completo 
+  // total del nombre completo (talento natural).
   int tn() {
-    return totalNombreCompleto;
+    return talentoNatural;
   }
   
   // Método de búsqueda lineal.
