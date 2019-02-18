@@ -54,18 +54,33 @@ void setup() {
 // Función principal
 void draw() { // Despliega el lienzo
   image(img, 0, 0);
+  
+  // CREAR UNA FUNCIÓN PAR NO REPETIR CÓDIGO
+  fill(255);
   float anchuraNombre = textWidth(nombreCompleto);
   float posXanchuraNombre = (1200 - anchuraNombre)/2;
-  float anchuraTotal = textWidth("Nota Fundamental");
-  float posXanchuraTotal = (1200 - anchuraTotal)/2;
-  fill(255);
   text(nombreCompleto, posXanchuraNombre, 100);
-  text("Talento Natural", posXanchuraTotal, 180);
-  // HACER RESPONSIVA ESTÁ PARTE DEL CÓDIGO
+  
+  float anchuraTalentoNatural = textWidth("Talento Natural");
+  float posXanchuraTalentoNatural = (1200 - anchuraTalentoNatural)/2;
+  text("Talento Natural", posXanchuraTalentoNatural, 180);
+  
   noStroke();
-  ellipse(width/2-45, height/2-130, 90, 90);
+  ellipse(width/2, height/2-130, 90, 90);
   fill(0);
   char c = char(lectorN.tn());
   float d = textWidth(c);
-  text(lectorN.tn(), width/2-(d+55), height/2-115);
+  text(lectorN.tn(), width/2-(d+12), height/2-115);
+  
+  fill(255);
+  float anchuraUrgenciaInterior = textWidth("Urgencia Interior");
+  float posXanchuraUrgenciaInterior = (1200 - anchuraUrgenciaInterior)/2;
+  text("Urgencia Interior", posXanchuraUrgenciaInterior, 360);
+  
+  noStroke();
+  ellipse(width/2, height/2+50, 90, 90);
+  fill(0);
+  char a = char(lectorN.tn());
+  float b = textWidth(a);
+  text(lectorFN.tn(), width/2-(b+12), height/2+65);
 }
