@@ -6,9 +6,9 @@
 */
 
 // Variables para el nombre de la persona
-String nombre = "Elohim";
-String apellidoPaterno = "Guevara";
-String apellidoMaterno = "Varela";
+String nombre = "Julia Patricia";
+String apellidoPaterno = "Solís";
+String apellidoMaterno = "Santoyo";
 String nombreCompleto = nombre+" "+apellidoPaterno+" "+apellidoMaterno;
 // Convetir la cadena en un arreglo de caracteres
 char[] arrNombre = nombre.toCharArray();
@@ -16,9 +16,9 @@ char[] arrApellidoPaterno = apellidoPaterno.toCharArray();
 char[] arrApellidoMaterno = apellidoMaterno.toCharArray();
 
 // Variables para la fecha de nacimiento
-String dia = "09";
-String mes = "09";
-String ano = "1987";
+String dia = "26";
+String mes = "05";
+String ano = "1990";
 String fechaNacimiento = dia+"-"+mes+"-"+ano;
 char[] arrDia = dia.toCharArray();
 char[] arrMes = mes.toCharArray();
@@ -63,7 +63,9 @@ void draw() { // Despliega el lienzo
   text("Talento Natural", posXanchuraTotal, 180);
   // HACER RESPONSIVA ESTÁ PARTE DEL CÓDIGO
   noStroke();
-  ellipse(width/2, height/2-130, 90, 90);
+  ellipse(width/2-45, height/2-130, 90, 90);
   fill(0);
-  text(lectorN.tn(), width/2-27, height/2-115);
+  char c = char(lectorN.tn());
+  float d = textWidth(c);
+  text(lectorN.tn(), width/2-(d+55), height/2-115);
 }
