@@ -1,4 +1,5 @@
 /*
+*
 *  Autor: Elohim Guevara
 *
 *  LectorNombre.pde
@@ -7,16 +8,16 @@
  
 class LectorNombre {
   
-  // Letra del alfabeto español ch y ll
+  // Letras del alfabeto español ch y ll.
   int encontrar_c;
   int encontrar_h;
-  // Resto de letras del alfabeto español
+  // Resto de letras del alfabeto español.
   int a,b,c,d,e,f,g,h,i,j,k,l,m,n,nn,o,p,q,r,s,t,u,v,w,x,y,z;
   // Variables para conocer la suma (valor) individual del nombre, apellido
-  // paterno y apellido materno, y la suma total de los tres componentes
+  // paterno y apellido materno, y la suma total de los tres componentes.
   int valorA,valorB,valorC,valorD,valorE,valorF,valorG,valorH,valorI,valorJ,valorK,
       valorL,valorM,valorN,valorNN,valorO,valorP,valorQ,valorR,valorS,valorT,valorU,valorV,
-      valorW,valorX,valorY,valorZ = 0;
+      valorW,valorX,valorY,valorZ;
   // Me indica que cantidad de veces aparece determinada letra en cada uno de los tres
   // componenentes: nombre, apellido paterno y apellido materno; también, la suma
   // total de los tres componentes.
@@ -24,34 +25,37 @@ class LectorNombre {
       aparicionesG,aparicionesH,aparicionesI,aparicionesJ,aparicionesK,aparicionesL,
       aparicionesM,aparicionesN,aparicionesNN,aparicionesO,aparicionesP,aparicionesQ,
       aparicionesR,aparicionesS,aparicionesT,aparicionesU,aparicionesV,aparicionesW,
-      aparicionesX,aparicionesY,aparicionesZ = 0;
+      aparicionesX,aparicionesY,aparicionesZ;
   int totalA,totalB,totalC,totalD,totalE,totalF,totalG,totalH,totalI,
       totalJ,totalK,totalL,totalM,totalN,totalNN,totalO,totalP,totalQ,
-      totalR,totalS,totalT,totalU,totalV,totalW,totalX,totalY,totalZ = 0;
-  int talentoNatural = 0;
+      totalR,totalS,totalT,totalU,totalV,totalW,totalX,totalY,totalZ;
+  int talentoNatural;
   // Variables para el valor del nombre completo
-  int totalValorNombre,totalValorApellidoPaterno,totalValorApellidoMaterno = 0;
+  int totalValorNombre,totalValorApellidoPaterno,totalValorApellidoMaterno;
   // Variables para el valor de las consonantes y vocales
-  int totalValorVocalesNombre, totalValorConsonantesNombre;
-  int totalValorVocalesApellidoPaterno, totalValorConsonantesApellidoPaterno;
-  int totalValorVocalesApellidoMaterno, totalValorConsonantesApellidoMaterno;
+  int vocales, consonantes;
+  int totalValorVocalesNombre, totalValorConsonantesNombre = 0 ;
+  int totalValorVocalesApellidoPaterno, totalValorConsonantesApellidoPaterno = 0;
+  int totalValorVocalesApellidoMaterno, totalValorConsonantesApellidoMaterno = 0;
   int totalVocalesNombreCompleto, totalConsonatesNombreCompleto;
+  int totalValorPalabra;
   // Variables para los números pares e impares
-  int numeroParNombre, numeroParApellidoPaterno, numeroParApellidoMaterno;
-  int numeroImparNombre, numeroImparApellidoPaterno, numeroImparApellidoMaterno;
+  int pares, impares;
+  int numeroParNombre, numeroParApellidoPaterno, numeroParApellidoMaterno = 0;
+  int numeroImparNombre, numeroImparApellidoPaterno, numeroImparApellidoMaterno = 0;
   int totalNumeroImparNombreCompleto,totalNumeroParNombreCompleto;
        
   String caracterNulo = "¡NO HAY VALORES DE ESTA LETRA!";
   
   // Números
-  int uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve = 0;
+  int uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve;
   // Totales de los números
   int totalUno,totalDos,totalTres,totalCuatro,totalCinco,totalSeis,
       totalSiete,totalOcho,totalNueve;
   int tota;
   // Me indica que cantidad de veces aparece determinado número 
   int contadorUno,contadorDos,contadorTres,contadorCuatro, contadorCinco,
-      contadorSeis,contadorSiete,contadorOcho,contadorNueve = 0;
+      contadorSeis,contadorSiete,contadorOcho,contadorNueve;
   
   // Método para extraer el valor de cada letra,
   // dicha extracción se efectua del conjunto de
@@ -233,60 +237,48 @@ class LectorNombre {
         totalZ = aparicionesZ;
       } else {
         // Indica que es un espacio o es utulizado 
-        // por algun otro caracter que no está
+        // por algún otro caracter que no está
         // dentro de los parámetros establecidos.
         println(caracterNulo);    
       } 
     }
     
     // Totales
-    int totalValorPalabra = valorA+valorB+valorC+valorD+valorE+valorF+valorG+valorH+valorI+
+    totalValorPalabra = valorA+valorB+valorC+valorD+valorE+valorF+valorG+valorH+valorI+
                             valorJ+valorK+valorL+valorM+valorN+valorNN+valorO+valorP+valorQ+
                             valorR+valorS+valorT+valorU+valorV+valorX+valorY+valorZ;
         
-    int vocales = valorA+valorE+valorI+valorO+valorU;
-    int consonantes = valorB+valorC+valorD+valorF+valorG+
+    vocales = valorA+valorE+valorI+valorO+valorU;
+    consonantes = valorB+valorC+valorD+valorF+valorG+
                       valorH+valorJ+valorK+valorL+valorM+
                       valorN+valorNN+valorP+valorQ+valorR+
                       valorS+valorT+valorV+valorX+valorY+valorZ;
                       
-    int pares = totalB+totalE+totalG+totalJ+totalL+totalM+totalNN+totalQ+totalS+totalU+totalW+totalZ;
-    int impares = totalA+totalC+totalD+totalF+totalH+totalI+totalK+totalN+totalO+totalP+totalR+totalT+totalV+totalX+totalY;
+    pares = totalB+totalE+totalG+totalJ+totalL+totalM+totalNN+totalQ+totalS+totalU+totalW+totalZ;
+    impares = totalA+totalC+totalD+totalF+totalH+totalI+totalK+totalN+totalO+totalP+totalR+totalT+totalV+totalX+totalY;
     
     if (plb == 1) {
-      println("EL NÚMERO DE IMPARES EN EL NOMBRE ES: "+impares);
+      textos("NOMBRE");
       numeroImparNombre = impares;
-      println("EL NÚMERO DE PARES EN EL NOMBRE ES: "+pares);
       numeroParNombre = pares;
-      println("EL VALOR DE LAS VOCALES DEL NOMBRE ES: "+vocales);
       totalValorVocalesNombre = vocales;
-      println("EL VALOR DE LAS VOCALES DEL NOMBRE ES: "+consonantes);
       totalValorConsonantesNombre = consonantes;
-      println("El valor del NOMBRE es: "+totalValorPalabra);
       totalValorNombre = totalValorPalabra;
     }
     if (plb == 2) {
-      println("EL NÚMERO DE IMPARES EN EL NOMBRE ES: "+impares);
+      textos("APELLIDO PATERNO");
       numeroImparApellidoPaterno = impares;
-      println("EL NÚMERO DE PARES EN EL NOMBRE ES: "+pares);
       numeroParApellidoPaterno = pares;
-      println("EL VALOR DE LAS VOCALES DEL APELLIDO PATERNO ES: "+vocales);
       totalValorVocalesApellidoPaterno = vocales; 
-      println("EL VALOR DE LAS VOCALES DEL APELLIDO PATERNO ES: "+consonantes);
       totalValorConsonantesApellidoPaterno = consonantes;
-      println("El valor del APELLIDO PATERNO es: "+totalValorPalabra);
       totalValorApellidoPaterno = totalValorPalabra;
     }
     if (plb == 3) {
-      println("EL NÚMERO DE IMPARES EN EL NOMBRE ES: "+impares);
+      textos("APELLIDO MATERNO");
       numeroImparApellidoMaterno = impares;
-      println("EL NÚMERO DE PARES EN EL NOMBRE ES: "+pares);
       numeroParApellidoMaterno = pares;
-      println("EL VALOR DE LAS VOCALES DEL APELLIDO MATERNO ES: "+vocales);
       totalValorVocalesApellidoMaterno = vocales; 
-      println("EL VALOR DE LAS VOCALES DEL APELLIDO MATERNO ES: "+consonantes);
       totalValorConsonantesApellidoMaterno = consonantes;
-      println("El valor del APELLIDO MATERNO es: "+totalValorPalabra);
       totalValorApellidoMaterno = totalValorPalabra;
     }
     
@@ -449,6 +441,14 @@ class LectorNombre {
     totalX=0;
     totalY=0;
     totalZ=0;
+  }
+  
+  void textos(String txt) {
+    println("EL NÚMERO DE IMPARES EN EL" +txt+ " ES: "+impares);
+    println("EL NÚMERO DE PARES EN EL" +txt+ " ES: "+pares);
+    println("EL VALOR DE LAS VOCALES DEL" +txt+ " ES: "+vocales);
+    println("EL VALOR DE LAS VOCALES DEL" +txt+ " ES: "+consonantes);
+    println("El valor del" +txt+ "es: "+totalValorPalabra);
   }
   
   // Método que recorre el arreglo
