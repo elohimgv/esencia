@@ -1,4 +1,5 @@
 /*
+*
 *  Autor: Elohim Guevara
 *
 *  LectorFechaNacimiento.pde
@@ -20,18 +21,18 @@ class LectorFechaNacimiento {
   }
   
   // Números
-  int uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve = 0;
+  int uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve;
   // Totales de los números
   int totalUno,totalDos,totalTres,totalCuatro,totalCinco,totalSeis,
       totalSiete,totalOcho,totalNueve;
   // Totales de los tres componentes: día, mes y año.
   int t;
-  int totalDia, totalMes, totalAno = 0;
-  int totalValorDia, totalValorMes, totalValorAno = 0;
-  int urgenciaInterior = 0;
+  int totalDia, totalMes, totalAno;
+  int totalValorDia, totalValorMes, totalValorAno;
+  int urgenciaInterior;
   // Me indica que cantidad de veces aparece determinado número 
   int contadorUno,contadorDos,contadorTres,contadorCuatro, contadorCinco,
-      contadorSeis,contadorSiete,contadorOcho,contadorNueve = 0;
+      contadorSeis,contadorSiete,contadorOcho,contadorNueve;
   
   // Método que itera sobre cada uno de los 
   // componentes de la fecha de nacimiento
@@ -161,7 +162,7 @@ class LectorFechaNacimiento {
   
   // Método para reducir a una sola cifra el resultado final
   int unDigito(int masDeUnDigito, String componente) {
-    if (componente == "DÍA" || componente == "MES" || componente == "año") {
+    if (componente == "DÍA" || componente == "MES" || componente == "AÑO") {
       println("El valor del ARMÓNICO del " +componente+ " es: "+masDeUnDigito);
     }
     else {
@@ -174,7 +175,7 @@ class LectorFechaNacimiento {
     int total = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
     init();
     
-    if (componente == "DÍA" || componente == "MES" || componente == "año") {
+    if (componente == "DÍA" || componente == "MES" || componente == "AÑO") {
       println("El valor del " +componente+ " es: "+total);
     } else {
       println("El valor de la " +componente+ " es: "+total);
@@ -212,7 +213,6 @@ class LectorFechaNacimiento {
       println("El valor del AÑO es: "+ultimoTotalValorAno);
     }
     
-    //int urgenciaInterior;
     int ur = ultimoTotalValorDia+ultimoTotalValorMes+ultimoTotalValorAno;
     if (ur > 9) {
       urgenciaInterior = unDigito(ur, "URGENCIA INTERIOR");
