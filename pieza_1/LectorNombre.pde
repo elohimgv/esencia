@@ -39,6 +39,8 @@ class LectorNombre {
   int totalValorVocalesApellidoMaterno, totalValorConsonantesApellidoMaterno = 0;
   int totalVocalesNombreCompleto, totalConsonatesNombreCompleto;
   int totalValorPalabra;
+  int temperamento;
+  int ser;
   // Variables para los números pares e impares
   int pares, impares;
   int numeroParNombre, numeroParApellidoPaterno, numeroParApellidoMaterno = 0;
@@ -448,7 +450,7 @@ class LectorNombre {
     println("EL NÚMERO DE PARES EN EL" +txt+ " ES: "+pares);
     println("EL VALOR DE LAS VOCALES DEL" +txt+ " ES: "+vocales);
     println("EL VALOR DE LAS VOCALES DEL" +txt+ " ES: "+consonantes);
-    println("El valor del" +txt+ "es: "+totalValorPalabra);
+    println("El valor del " +txt+ " es: "+totalValorPalabra);
   }
   
   // Método que recorre el arreglo
@@ -557,7 +559,9 @@ class LectorNombre {
     if (cantidad_a_reducir < 10) {
       return cantidad_a_reducir;
     } else {
-      if (componente == "VOCALES" || componente == "CONSONANTES" || componente == "TALENTO NATURAL") {
+      if (componente == "VOCALES" || componente == "CONSONANTES" || 
+          componente == "TALENTO NATURAL" || componente == "TEMPERAMENTO" 
+          || componente == "SER") {
         println("El valor del ARMÓNICO de "+componente+" es: "+cantidad_a_reducir);
       }
       String numeroComoCadena = Integer.toString(cantidad_a_reducir);
@@ -580,6 +584,7 @@ class LectorNombre {
     println();
     
     int temporalVocales, temporalConsonantes;
+    int tmp, se;
     
     totalVocalesNombreCompleto = totalValorVocalesNombre+totalValorVocalesApellidoPaterno+totalValorVocalesApellidoMaterno;
     totalConsonatesNombreCompleto = totalValorConsonantesNombre+totalValorConsonantesApellidoPaterno+totalValorConsonantesApellidoMaterno;
@@ -587,16 +592,26 @@ class LectorNombre {
     if (totalVocalesNombreCompleto > 9 || totalConsonatesNombreCompleto > 9) {
       temporalVocales = unDigito(totalVocalesNombreCompleto, "VOCALES");
       temporalConsonantes = unDigito(totalConsonatesNombreCompleto, "CONSONANTES");
+      tmp = temporalVocales + temporalConsonantes;
+      temperamento = unDigito(tmp, "TEMPERAMENTO");
+      se = temporalVocales + temporalConsonantes + temperamento;
+      ser = unDigito(se, "SER");
       println();
       println("EL VALOR TOTAL DE LAS VOCALES ES: "+temporalVocales);
       println("EL VALOR TOTAL DE LAS CONSONANTES ES: "+temporalConsonantes);
+      println("EL VALOR DEL TEMPERAMENTO ES: "+temperamento);
+      println("EL NIVEL DEL SER ES: "+ser);
       println();
     } else {
       temporalVocales = totalVocalesNombreCompleto;
       temporalConsonantes = totalConsonatesNombreCompleto;
+      temperamento = temporalVocales + temporalConsonantes;
+      ser = temporalVocales + temporalConsonantes + temperamento;
       println();
       println("EL VALOR TOTAL DE LAS VOCALES ES: "+temporalVocales);
       println("EL VALOR TOTAL DE LAS CONSONANTES ES: "+temporalConsonantes);
+      println("EL VALOR DEL TEMPERAMENTO ES: "+temperamento);
+      println("EL NIVEL DEL SER ES: "+ser);
       println();
     }
     
