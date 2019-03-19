@@ -8,6 +8,13 @@
  
 class LectorNombre {
   
+  // Declaración y creación de objetos
+  Digito digi_voca = new Digito();
+  Digito digi_conso = new Digito();
+  Digito digi_tempe = new Digito();
+  Digito digi_se = new Digito();
+  Digito digi_total = new Digito();
+  
   // Letras del alfabeto español ch y ll.
   int encontrar_c;
   int encontrar_h;
@@ -47,14 +54,8 @@ class LectorNombre {
   int numeroImparNombre, numeroImparApellidoPaterno, numeroImparApellidoMaterno = 0;
   int totalNumeroImparNombreCompleto,totalNumeroParNombreCompleto;
        
-  String caracterNulo = "¡NO HAY VALORES DE ESTA LETRA!";
+  final String CARACTER_NULO = "¡NO HAY VALORES DE ESTA LETRA!";
   
-  // Números
-  int uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve;
-  // Totales de los números
-  int totalUno,totalDos,totalTres,totalCuatro,totalCinco,totalSeis,
-      totalSiete,totalOcho,totalNueve;
-  int tota;
   // Me indica que cantidad de veces aparece determinado número 
   int contadorUno,contadorDos,contadorTres,contadorCuatro, contadorCinco,
       contadorSeis,contadorSiete,contadorOcho,contadorNueve;
@@ -241,23 +242,27 @@ class LectorNombre {
         // Indica que es un espacio o es utulizado 
         // por algún otro caracter que no está
         // dentro de los parámetros establecidos.
-        println(caracterNulo);    
+        println(CARACTER_NULO);    
       } 
     }
     
     // Totales
     totalValorPalabra = valorA+valorB+valorC+valorD+valorE+valorF+valorG+valorH+valorI+
-                            valorJ+valorK+valorL+valorM+valorN+valorNN+valorO+valorP+valorQ+
-                            valorR+valorS+valorT+valorU+valorV+valorX+valorY+valorZ;
+                        valorJ+valorK+valorL+valorM+valorN+valorNN+valorO+valorP+valorQ+
+                        valorR+valorS+valorT+valorU+valorV+valorX+valorY+valorZ;
         
     vocales = valorA+valorE+valorI+valorO+valorU;
     consonantes = valorB+valorC+valorD+valorF+valorG+
-                      valorH+valorJ+valorK+valorL+valorM+
-                      valorN+valorNN+valorP+valorQ+valorR+
-                      valorS+valorT+valorV+valorX+valorY+valorZ;
+                  valorH+valorJ+valorK+valorL+valorM+
+                  valorN+valorNN+valorP+valorQ+valorR+
+                  valorS+valorT+valorV+valorX+valorY+valorZ;
                       
-    pares = totalB+totalE+totalG+totalJ+totalL+totalM+totalNN+totalQ+totalS+totalU+totalW+totalZ;
-    impares = totalA+totalC+totalD+totalF+totalH+totalI+totalK+totalN+totalO+totalP+totalR+totalT+totalV+totalX+totalY;
+    pares = totalB+totalE+totalG+totalJ+totalL+totalM+
+            totalNN+totalQ+totalS+totalU+totalW+totalZ;
+            
+    impares = totalA+totalC+totalD+totalF+totalH+totalI+
+              totalK+totalN+totalO+totalP+totalR+totalT+
+              totalV+totalX+totalY;
     
     if (plb == 1) {
       textos("NOMBRE");
@@ -452,127 +457,7 @@ class LectorNombre {
     println("EL VALOR DE LAS VOCALES DEL" +txt+ " ES: "+consonantes);
     println("El valor del " +txt+ " es: "+totalValorPalabra);
   }
-  
-  // Método que recorre el arreglo
-  int iterador(char[] x) {
-    for (int ciclo = 0; ciclo < x.length; ciclo++) {
-      if (x[ciclo] == '0') {
-        //println("Valor de: "+cero);
-      }
-      if (x[ciclo] == '1') {
-        uno = 1;
-        //println("Valor de: "+uno);
-        contadorUno++;
-        totalUno = uno * contadorUno;
-      }
-      if (x[ciclo] == '2') {
-        dos = 2;
-        //println("Valor de: "+dos);
-        contadorDos++;
-        totalDos = dos * contadorDos;
-      }
-      if (x[ciclo] == '3') {
-        tres = 3;
-        //println("Valor de: "+tres);
-        contadorTres++;
-        totalTres = tres * contadorTres;
-      }
-      if (x[ciclo] == '4') {
-        cuatro = 4;
-        //println("Valor de: "+cuatro);
-        contadorCuatro++;
-        totalCuatro = cuatro * contadorCuatro;
-      }
-      if (x[ciclo] == '5') {
-        cinco = 5;
-        //println("Valor de: "+cinco);
-        contadorCinco++;
-        totalCinco = cinco * contadorCinco;
-      }
-      if (x[ciclo] == '6') {
-        seis = 6;
-        //println("Valor de: "+seis);
-        contadorSeis++;
-        totalSeis = seis * contadorSeis;
-      }
-      if (x[ciclo] == '7') {
-        siete = 7;
-        //println("Valor de: "+siete);
-        contadorSiete++;
-        totalSiete = siete * contadorSiete;
-      }
-      if (x[ciclo] == '8') {
-        ocho = 8;
-        //println("Valor de: "+ocho);
-        contadorOcho++;
-        totalOcho = ocho * contadorOcho;
-      }
-      if (x[ciclo] == '9') {
-        nueve = 9;
-        //println("Valor de: "+nueve);
-        contadorNueve++;
-        totalNueve = nueve * contadorNueve;
-      }
-    }
-    
-    tota = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
-    
-    return tota;
-  }
-  
-  // Método para inicializar y asignar el valor 
-  // de cero en las variables.
-  void init() {
-    contadorUno=0;
-    contadorDos=0;
-    contadorTres=0;
-    contadorCuatro=0;
-    contadorCinco=0;
-    contadorSeis=0;
-    contadorSiete=0;
-    contadorOcho=0;
-    contadorNueve=0;
-    
-    totalUno=0;
-    totalDos=0;
-    totalTres=0;
-    totalCuatro=0;
-    totalCinco=0;
-    totalSeis=0;
-    totalSiete=0;
-    totalOcho=0;
-    totalNueve=0;
-    
-    uno=0;
-    dos=0;
-    tres=0;
-    cuatro=0;
-    cinco=0;
-    seis=0;
-    siete=0;
-    ocho=0;
-    nueve=0;
-  }
-  
-  // Método para reducir a una sola cifra el resultado final
-  int unDigito(int cantidad_a_reducir, String componente) {
-    if (cantidad_a_reducir < 10) {
-      return cantidad_a_reducir;
-    } else {
-      if (componente == "VOCALES" || componente == "CONSONANTES" || 
-          componente == "TALENTO NATURAL" || componente == "TEMPERAMENTO" 
-          || componente == "SER") {
-        println("El valor del ARMÓNICO de "+componente+" es: "+cantidad_a_reducir);
-      }
-      String numeroComoCadena = Integer.toString(cantidad_a_reducir);
-      char[] unDigitoTotalValor = numeroComoCadena.toCharArray();
-      int total = iterador(unDigitoTotalValor);
-      init();
-        
-      return unDigito(total, componente);
-    } 
-  }
-  
+ 
   // Método para cuantificar el valor total
   // del nombre completo de la persona.
   void totalesNombre() {
@@ -590,12 +475,12 @@ class LectorNombre {
     totalConsonatesNombreCompleto = totalValorConsonantesNombre+totalValorConsonantesApellidoPaterno+totalValorConsonantesApellidoMaterno;
     
     if (totalVocalesNombreCompleto > 9 || totalConsonatesNombreCompleto > 9) {
-      temporalVocales = unDigito(totalVocalesNombreCompleto, "VOCALES");
-      temporalConsonantes = unDigito(totalConsonatesNombreCompleto, "CONSONANTES");
+      temporalVocales = digi_voca.unDigito(totalVocalesNombreCompleto, "VOCALES");
+      temporalConsonantes = digi_conso.unDigito(totalConsonatesNombreCompleto, "CONSONANTES");
       tmp = temporalVocales + temporalConsonantes;
-      temperamento = unDigito(tmp, "TEMPERAMENTO");
+      temperamento = digi_tempe.unDigito(tmp, "TEMPERAMENTO");
       se = temporalVocales + temporalConsonantes + temperamento;
-      ser = unDigito(se, "SER");
+      ser = digi_se.unDigito(se, "SER");
       println();
       println("EL VALOR TOTAL DE LAS VOCALES ES: "+temporalVocales);
       println("EL VALOR TOTAL DE LAS CONSONANTES ES: "+temporalConsonantes);
@@ -617,7 +502,7 @@ class LectorNombre {
     
     int totalNombreCompleto = totalValorNombre+totalValorApellidoPaterno+totalValorApellidoMaterno;
     if (totalNombreCompleto > 9) {
-      talentoNatural = unDigito(totalNombreCompleto, "TALENTO NATURAL");
+      talentoNatural = digi_total.unDigito(totalNombreCompleto, "TALENTO NATURAL");
       println();
       println("EL TALENTO NATURAL ES: "+talentoNatural);
       println();
