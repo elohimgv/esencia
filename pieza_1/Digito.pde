@@ -114,27 +114,37 @@ class Digito {
     nueve=0;
   } 
   
-  // Método para reducir a una sola cifra el resultado final
-  int unDigito(int masDeUnDigito, String componente) {
-    if (componente == "DÍA" || componente == "MES" || componente == "AÑO") {
-       println("El valor del ARMÓNICO del " +componente+ " es: "+masDeUnDigito);
-     }
-     else {
-       println("El valor del ARMÓNICO de la " +componente+ " es: "+masDeUnDigito);
-     }
+  // Método para reducir a una sola cifra 
+  int unDigito(int cantidad_a_reducir, String componente) {
+    if (cantidad_a_reducir < 10) {
+      return cantidad_a_reducir;
+    } else {
+      if (componente == "DÍA" || componente == "MES" || componente == "AÑO" || componente == "SER" || componente == "TEMPERAMENTO" || componente == "TALENTO NATURAL") {
+         println("El valor del ARMÓNICO del " +componente+ " es: "+cantidad_a_reducir);
+      } else if (componente == "VOCALES" || componente == "CONSONANTES") {
+        println("El valor del ARMÓNICO de las " +componente+ " es: "+cantidad_a_reducir);
+      } else if (componente == "URGENCIA INTERIOR") {
+         println("El valor del ARMÓNICO de la " +componente+ " es: "+cantidad_a_reducir);
+      } 
+    }
       
-     String numeroComoCadena = Integer.toString(masDeUnDigito);
+     String numeroComoCadena = Integer.toString(cantidad_a_reducir);
      char[] unDigitoTotalValor = numeroComoCadena.toCharArray();
-     iterador(unDigitoTotalValor);
-     int total = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
-     init();
-      
-     if (componente == "DÍA" || componente == "MES" || componente == "AÑO") {
+     //iterador(unDigitoTotalValor);
+     //int total = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
+     int total = iterador(unDigitoTotalValor);
+     
+     if (componente == "DÍA" || componente == "MES" || componente == "AÑO" || componente == "SER" || componente == "TEMPERAMENTO" || componente == "TALENTO NATURAL") {
        println("El valor del " +componente+ " es: "+total);
-     } else {
+     } else if (componente == "VOCALES" || componente == "CONSONANTES") {
+      println("El valor de las " +componente+ " es: "+total);
+     } else if (componente == "URGENCIA INTERIOR") {
        println("El valor de la " +componente+ " es: "+total);
      }
+    
+     init();
       
-     return total;
+     //return total;
+     return unDigito(total, componente);
   }
 }
