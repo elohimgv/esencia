@@ -51,7 +51,6 @@ class LectorFechaNacimiento {
     totalValorAno = totalAno;
 
     if (totalValorDia > 9) {
-      //ultimoTotalValorDia = unDigito(totalValorDia, "DÍA");
       ultimoTotalValorDia = digi_dia.unDigito(totalValorDia, "DÍA");
     } else {
       ultimoTotalValorDia = totalValorDia;
@@ -59,7 +58,6 @@ class LectorFechaNacimiento {
     }
 
     if (totalValorMes > 9) {
-      //ultimoTotalValorMes = unDigito(totalValorMes, "MES");
       ultimoTotalValorMes = digi_mes.unDigito(totalValorMes, "MES");
     } else {
       ultimoTotalValorMes = totalValorMes;
@@ -67,7 +65,6 @@ class LectorFechaNacimiento {
     } 
 
     if (totalValorAno > 9) {
-      //ultimoTotalValorAno = unDigito(totalValorAno, "AÑO");
       ultimoTotalValorAno = digi_ano.unDigito(totalValorAno, "AÑO");
     } else {
       ultimoTotalValorAno = totalValorAno;
@@ -76,7 +73,6 @@ class LectorFechaNacimiento {
 
     int ur = ultimoTotalValorDia+ultimoTotalValorMes+ultimoTotalValorAno;
     if (ur > 9) {
-      //urgenciaInterior = unDigito(ur, "URGENCIA INTERIOR");
       urgenciaInterior = digi_total.unDigito(ur, "URGENCIA INTERIOR");
       println();
       println("LA URGENCIA INTERIOR ES: "+urgenciaInterior);
