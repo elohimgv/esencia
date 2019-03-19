@@ -451,10 +451,10 @@ class LectorNombre {
   }
   
   void textos(String txt) {
-    println("EL NÚMERO DE IMPARES EN EL" +txt+ " ES: "+impares);
-    println("EL NÚMERO DE PARES EN EL" +txt+ " ES: "+pares);
-    println("EL VALOR DE LAS VOCALES DEL" +txt+ " ES: "+vocales);
-    println("EL VALOR DE LAS VOCALES DEL" +txt+ " ES: "+consonantes);
+    println("EL NÚMERO DE IMPARES EN EL " +txt+ " ES: "+impares);
+    println("EL NÚMERO DE PARES EN EL " +txt+ " ES: "+pares);
+    println("EL VALOR DE LAS VOCALES DEL " +txt+ " ES: "+vocales);
+    println("EL VALOR DE LAS VOCALES DEL " +txt+ " ES: "+consonantes);
     println("El valor del " +txt+ " es: "+totalValorPalabra);
   }
  
