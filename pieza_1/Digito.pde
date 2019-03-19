@@ -81,7 +81,7 @@ class Digito {
   }
    
   // Método para inicializar y asignar el valor 
-    // de cero en las variables.
+  // de cero en las variables.
   void init() {
     contadorUno=0;
     contadorDos=0;
@@ -134,13 +134,13 @@ class Digito {
      //int total = totalUno+totalDos+totalTres+totalCuatro+totalCinco+totalSeis+totalSiete+totalOcho+totalNueve;
      int total = iterador(unDigitoTotalValor);
      
-     if (componente == "DÍA" || componente == "MES" || componente == "AÑO" || componente == "SER" || componente == "TEMPERAMENTO" || componente == "TALENTO NATURAL") {
+     /*if (componente == "DÍA" || componente == "MES" || componente == "AÑO" || componente == "SER" || componente == "TEMPERAMENTO" || componente == "TALENTO NATURAL") {
        println("El valor del " +componente+ " es: "+total);
      } else if (componente == "VOCALES" || componente == "CONSONANTES") {
       println("El valor de las " +componente+ " es: "+total);
      } else if (componente == "URGENCIA INTERIOR") {
        println("El valor de la " +componente+ " es: "+total);
-     }
+     }*/
     
      init();
       
