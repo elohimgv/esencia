@@ -7,9 +7,9 @@
 */
 
 // Variables para el nombre de la persona
-String nombre = "Marisol";
-String apellidoPaterno = "Venegas";
-String apellidoMaterno = "Hernández";
+String nombre = "Elohim";
+String apellidoPaterno = "Guevara";
+String apellidoMaterno = "Varela";
 String nombreCompleto = nombre+" "+apellidoPaterno+" "+apellidoMaterno;
 
 // Convetir la cadena en un arreglo de caracteres
@@ -18,9 +18,9 @@ char[] arrApellidoPaterno = apellidoPaterno.toCharArray();
 char[] arrApellidoMaterno = apellidoMaterno.toCharArray();
 
 // Variables para la fecha de nacimiento
-String dia = "10"; 
-String mes = "06"; 
-String ano = "2006"; 
+String dia = "09"; 
+String mes = "09"; 
+String ano = "1987"; 
 String fechaNacimiento = dia+"-"+mes+"-"+ano;
 char[] arrDia = dia.toCharArray();
 char[] arrMes = mes.toCharArray();
@@ -66,6 +66,5 @@ void draw() {
   
   // Urgencia Interior
   i.desplegarTexto("Urgencia Interior", 360);
-  i.desplegarDigito(f.tn(), 50, 65);
+  i.desplegarDigito(f.ui(), 50, 65);
 }
-
