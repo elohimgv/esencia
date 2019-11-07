@@ -1,10 +1,10 @@
 /*
 *
- *  Autor: Elohim Guevara
- *
- *  LectorFechaNacimiento.pde
- *
- */
+*  Autor: Elohim Guevara
+*
+*  LectorFechaNacimiento.pde
+*
+*/
 
 class LectorFechaNacimiento {
 
@@ -87,7 +87,7 @@ class LectorFechaNacimiento {
 
   // Método para desplegar en el sketch el 
   // total de la fecha de nacimiento (urgencia interior).
-  int tn() {
+  int ui() {
     return urgenciaInterior;
   }
 }
