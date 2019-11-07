@@ -9,36 +9,39 @@
 class LectorNombre {
   
   // Declaración y creación de objetos
-  Digito digi_voca = new Digito();
-  Digito digi_conso = new Digito();
-  Digito digi_tempe = new Digito();
-  Digito digi_se = new Digito();
-  Digito digi_total = new Digito();
+  Digito digito_vocales = new Digito();
+  Digito digito_consonantes = new Digito();
+  Digito digito_temperamento = new Digito();
+  Digito digito_ser = new Digito();
+  Digito digito_total = new Digito();
   
   // Letras del alfabeto español ch y ll.
   int encontrar_c;
   int encontrar_h;
   // Resto de letras del alfabeto español.
-  int a,b,c,d,e,f,g,h,i,j,k,l,m,n,nn,o,p,q,r,s,t,u,v,w,x,y,z;
+  int a, b, c, d, e, f, g, h, i, j, k, l, m, n, 
+      nn, o, p, q, r, s, t, u, v, w, x, y, z;
   // Variables para conocer la suma (valor) individual del nombre, apellido
   // paterno y apellido materno, y la suma total de los tres componentes.
-  int valorA,valorB,valorC,valorD,valorE,valorF,valorG,valorH,valorI,valorJ,valorK,
-      valorL,valorM,valorN,valorNN,valorO,valorP,valorQ,valorR,valorS,valorT,valorU,valorV,
-      valorW,valorX,valorY,valorZ;
+  int valorA, valorB, valorC, valorD, valorE, valorF, valorG, valorH, 
+      valorI, valorJ, valorK, valorL, valorM, valorN, valorNN, valorO, 
+      valorP, valorQ, valorR, valorS, valorT, valorU, valorV, valorW, 
+      valorX, valorY, valorZ;
   // Me indica que cantidad de veces aparece determinada letra en cada uno de los tres
   // componenentes: nombre, apellido paterno y apellido materno; también, la suma
   // total de los tres componentes.
-  int aparicionesA,aparicionesB,aparicionesC,aparicionesD,aparicionesE,aparicionesF,
-      aparicionesG,aparicionesH,aparicionesI,aparicionesJ,aparicionesK,aparicionesL,
-      aparicionesM,aparicionesN,aparicionesNN,aparicionesO,aparicionesP,aparicionesQ,
-      aparicionesR,aparicionesS,aparicionesT,aparicionesU,aparicionesV,aparicionesW,
-      aparicionesX,aparicionesY,aparicionesZ;
-  int totalA,totalB,totalC,totalD,totalE,totalF,totalG,totalH,totalI,
-      totalJ,totalK,totalL,totalM,totalN,totalNN,totalO,totalP,totalQ,
-      totalR,totalS,totalT,totalU,totalV,totalW,totalX,totalY,totalZ;
+  int aparicionesA, aparicionesB, aparicionesC, aparicionesD, aparicionesE, aparicionesF,
+      aparicionesG, aparicionesH, aparicionesI, aparicionesJ, aparicionesK, aparicionesL,
+      aparicionesM, aparicionesN, aparicionesNN, aparicionesO, aparicionesP, aparicionesQ,
+      aparicionesR, aparicionesS, aparicionesT, aparicionesU, aparicionesV, aparicionesW,
+      aparicionesX, aparicionesY, aparicionesZ;
+  int totalA, totalB, totalC, totalD, totalE, totalF, totalG, totalH, 
+      totalI, totalJ, totalK, totalL, totalM, totalN, totalNN, totalO,
+      totalP, totalQ, totalR, totalS, totalT, totalU, totalV, totalW,
+      totalX, totalY, totalZ;
   int talentoNatural;
   // Variables para el valor del nombre completo
-  int totalValorNombre,totalValorApellidoPaterno,totalValorApellidoMaterno;
+  int totalValorNombre, totalValorApellidoPaterno, totalValorApellidoMaterno;
   // Variables para el valor de las consonantes y vocales
   int vocales, consonantes;
   int totalValorVocalesNombre, totalValorConsonantesNombre = 0 ;
@@ -52,13 +55,13 @@ class LectorNombre {
   int pares, impares;
   int numeroParNombre, numeroParApellidoPaterno, numeroParApellidoMaterno = 0;
   int numeroImparNombre, numeroImparApellidoPaterno, numeroImparApellidoMaterno = 0;
-  int totalNumeroImparNombreCompleto,totalNumeroParNombreCompleto;
+  int totalNumeroImparNombreCompleto, totalNumeroParNombreCompleto;
        
   final String CARACTER_NULO = "¡NO HAY VALORES DE ESTA LETRA!";
   
   // Me indica que cantidad de veces aparece determinado número 
-  int contadorUno,contadorDos,contadorTres,contadorCuatro, contadorCinco,
-      contadorSeis,contadorSiete,contadorOcho,contadorNueve;
+  int contadorUno, contadorDos, contadorTres, contadorCuatro, contadorCinco,
+      contadorSeis, contadorSiete, contadorOcho, contadorNueve;
   
   // Método para extraer el valor de cada letra,
   // dicha extracción se efectua del conjunto de
@@ -121,7 +124,8 @@ class LectorNombre {
         valorH = h*aparicionesH;
         totalH = aparicionesH;
         // 2da escala
-      } else if (arr[ciclo] == 'i' || arr[ciclo] == 'I' || arr[ciclo] == 'í' || arr[ciclo] == 'Í') {
+      } else if (arr[ciclo] == 'i' || arr[ciclo] == 'I' || 
+                 arr[ciclo] == 'í' || arr[ciclo] == 'Í') {
         println("El valor de i/I es 1.");
         i = 1;
         aparicionesI++;
@@ -164,7 +168,8 @@ class LectorNombre {
         aparicionesNN++;
         valorNN = nn*aparicionesNN;
         totalNN = aparicionesNN;
-      } else if (arr[ciclo] == 'o' || arr[ciclo] == 'O' || arr[ciclo] == 'ó' || arr[ciclo] == 'Ó') {
+      } else if (arr[ciclo] == 'o' || arr[ciclo] == 'O' || 
+                 arr[ciclo] == 'ó' || arr[ciclo] == 'Ó') {
         println("El valor de o/O es 9.");
         o = 9;
         aparicionesO++;
@@ -468,19 +473,19 @@ class LectorNombre {
     println("TOTAL NÚMERO PARES EN EL NOMBRE COMPLETO ES: "+totalNumeroParNombreCompleto);
     println();
     
-    int temporalVocales, temporalConsonantes;
+    int temporalVocales, temporalConsonantes; /////////////////////////////////////////////////
     int tmp, se;
     
     totalVocalesNombreCompleto = totalValorVocalesNombre+totalValorVocalesApellidoPaterno+totalValorVocalesApellidoMaterno;
     totalConsonatesNombreCompleto = totalValorConsonantesNombre+totalValorConsonantesApellidoPaterno+totalValorConsonantesApellidoMaterno;
     
     if (totalVocalesNombreCompleto > 9 || totalConsonatesNombreCompleto > 9) {
-      temporalVocales = digi_voca.unDigito(totalVocalesNombreCompleto, "VOCALES");
-      temporalConsonantes = digi_conso.unDigito(totalConsonatesNombreCompleto, "CONSONANTES");
+      temporalVocales = digito_vocales.unDigito(totalVocalesNombreCompleto, "VOCALES");
+      temporalConsonantes = digito_consonantes.unDigito(totalConsonatesNombreCompleto, "CONSONANTES");
       tmp = temporalVocales + temporalConsonantes;
-      temperamento = digi_tempe.unDigito(tmp, "TEMPERAMENTO");
+      temperamento = digito_temperamento.unDigito(tmp, "TEMPERAMENTO");
       se = temporalVocales + temporalConsonantes + temperamento;
-      ser = digi_se.unDigito(se, "SER");
+      ser = digito_ser.unDigito(se, "SER");
       println();
       println("EL VALOR TOTAL DE LAS VOCALES ES: "+temporalVocales);
       println("EL VALOR TOTAL DE LAS CONSONANTES ES: "+temporalConsonantes);
@@ -502,7 +507,7 @@ class LectorNombre {
     
     int totalNombreCompleto = totalValorNombre+totalValorApellidoPaterno+totalValorApellidoMaterno;
     if (totalNombreCompleto > 9) {
-      talentoNatural = digi_total.unDigito(totalNombreCompleto, "TALENTO NATURAL");
+      talentoNatural = digito_total.unDigito(totalNombreCompleto, "TALENTO NATURAL");
       println();
       println("EL TALENTO NATURAL ES: "+talentoNatural);
       println();
