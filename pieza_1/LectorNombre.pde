@@ -1,14 +1,13 @@
 /*
-*
-*  Autor: Elohim Guevara
-*
-*  LectorNombre.pde
-*
+* Clase para descomponer las palabras en letras
+* y asignar valores a cada una de las letras;
+* contabilizar la aparición de los caracteres 
+* y asignándoles un total a ellos. 
 */
  
 class LectorNombre {
   
-  // Declaración y creación de objetos
+  // Declaración y creación de objetos 
   Digito digito_vocales = new Digito();
   Digito digito_consonantes = new Digito();
   Digito digito_temperamento = new Digito();
@@ -16,32 +15,40 @@ class LectorNombre {
   Digito digito_total = new Digito();
   
   // Letras del alfabeto español ch y ll.
+  // Éstas se toman especialmente porque están
+  // formadas por dos letras.
   int encontrar_c;
   int encontrar_h;
-  // Resto de letras del alfabeto español.
+  
+  // Resto de letras del alfabeto español (nn = ñ)
   int a, b, c, d, e, f, g, h, i, j, k, l, m, n, 
       nn, o, p, q, r, s, t, u, v, w, x, y, z;
-  // Variables para conocer la suma (valor) individual del nombre, apellido
-  // paterno y apellido materno, y la suma total de los tres componentes.
+      
+  // Variables para conocer la suma (valor) individual del nombre, 
+  // apellido paterno y apellido materno (valorNN = valor de ñ).
   int valorA, valorB, valorC, valorD, valorE, valorF, valorG, valorH, 
       valorI, valorJ, valorK, valorL, valorM, valorN, valorNN, valorO, 
       valorP, valorQ, valorR, valorS, valorT, valorU, valorV, valorW, 
       valorX, valorY, valorZ;
-  // Me indica que cantidad de veces aparece determinada letra en cada uno de los tres
-  // componenentes: nombre, apellido paterno y apellido materno; también, la suma
-  // total de los tres componentes.
+      
+  // Variables que indican que cantidad de veces aparece determinada letra en cada 
+  // uno de los tres componenentes: nombre, apellido paterno y apellido materno; 
+  // también, para la suma total de los tres componentes 
+  // (aparicionesNN = apariciones de ñ y totalNN = total de ñ).
   int aparicionesA, aparicionesB, aparicionesC, aparicionesD, aparicionesE, aparicionesF,
       aparicionesG, aparicionesH, aparicionesI, aparicionesJ, aparicionesK, aparicionesL,
       aparicionesM, aparicionesN, aparicionesNN, aparicionesO, aparicionesP, aparicionesQ,
       aparicionesR, aparicionesS, aparicionesT, aparicionesU, aparicionesV, aparicionesW,
-      aparicionesX, aparicionesY, aparicionesZ;
+      aparicionesX, aparicionesY, aparicionesZ; 
   int totalA, totalB, totalC, totalD, totalE, totalF, totalG, totalH, 
       totalI, totalJ, totalK, totalL, totalM, totalN, totalNN, totalO,
       totalP, totalQ, totalR, totalS, totalT, totalU, totalV, totalW,
       totalX, totalY, totalZ;
-  int talentoNatural;
+      
   // Variables para el valor del nombre completo
   int totalValorNombre, totalValorApellidoPaterno, totalValorApellidoMaterno;
+  int talentoNatural;
+  
   // Variables para el valor de las consonantes y vocales
   int vocales, consonantes;
   int totalValorVocalesNombre, totalValorConsonantesNombre = 0 ;
@@ -51,31 +58,32 @@ class LectorNombre {
   int totalValorPalabra;
   int temperamento;
   int ser;
+  
   // Variables para los números pares e impares
   int pares, impares;
   int numeroParNombre, numeroParApellidoPaterno, numeroParApellidoMaterno = 0;
   int numeroImparNombre, numeroImparApellidoPaterno, numeroImparApellidoMaterno = 0;
   int totalNumeroImparNombreCompleto, totalNumeroParNombreCompleto;
        
+  // Variable para saber si ha sido introducido un caracter no permitido
   final String CARACTER_NULO = "¡NO HAY VALORES DE ESTA LETRA!";
   
-  // Me indica que cantidad de veces aparece determinado número 
+  // Variables que indican que cantidad de veces aparece determinado número 
   int contadorUno, contadorDos, contadorTres, contadorCuatro, contadorCinco,
       contadorSeis, contadorSiete, contadorOcho, contadorNueve;
   
-  // Método para extraer el valor de cada letra,
-  // dicha extracción se efectua del conjunto de
-  // letras que forma el nombre de la persona.
+  /**************************************************
+  * Método para extraer el valor de cada letra, dicha 
+  * extracción se efectua del conjunto de letras que 
+  * forman el nombre y apellidos de la persona.
+  *//////////////////////////////////////////////////
   void lectorNombre(char[] arr, int plb) {
-    //println(palabra);
-    //println(arr);
-    //println("El tamaño del arreglo es: " + arr.length);
-    
     encontrar_c = busquedaLineal(arr, arr.length, 'c');
     encontrar_h = busquedaLineal(arr, arr.length, 'h'); 
     for (int ciclo = 0; ciclo < arr.length; ciclo++) {
        // 1ra escala
-      if (arr[ciclo] == 'a' || arr[ciclo] == 'A' || arr[ciclo] == 'á' || arr[ciclo] == 'Á') {
+      if (arr[ciclo] == 'a' || arr[ciclo] == 'A' || 
+          arr[ciclo] == 'á' || arr[ciclo] == 'Á') {
         println("El valor de a/A es 1.");
         a = 1;
         aparicionesA++;
@@ -99,7 +107,8 @@ class LectorNombre {
         aparicionesD++;
         valorD = d*aparicionesD;
         totalD = aparicionesD;
-      } else if (arr[ciclo] == 'e' || arr[ciclo] == 'E' || arr[ciclo] == 'é' || arr[ciclo] == 'É') {
+      } else if (arr[ciclo] == 'e' || arr[ciclo] == 'E' || 
+                 arr[ciclo] == 'é' || arr[ciclo] == 'É') {
         println("El valor de e/E es 6.");
         e = 6;
         aparicionesE++;
@@ -206,7 +215,8 @@ class LectorNombre {
         aparicionesT++;
         valorT = t*aparicionesT;
         totalT = aparicionesT;
-      } else if (arr[ciclo] == 'u' || arr[ciclo] == 'U' || arr[ciclo] == 'ú' || arr[ciclo] == 'Ú') {
+      } else if (arr[ciclo] == 'u' || arr[ciclo] == 'U' || 
+                 arr[ciclo] == 'ú' || arr[ciclo] == 'Ú') {
         println("El valor de u/U es 6.");
         u = 6;
         aparicionesU++;
@@ -251,7 +261,7 @@ class LectorNombre {
       } 
     }
     
-    // Totales
+    // Totales...
     totalValorPalabra = valorA+valorB+valorC+valorD+valorE+valorF+valorG+valorH+valorI+
                         valorJ+valorK+valorL+valorM+valorN+valorNN+valorO+valorP+valorQ+
                         valorR+valorS+valorT+valorU+valorV+valorX+valorY+valorZ;
@@ -294,6 +304,7 @@ class LectorNombre {
       totalValorApellidoMaterno = totalValorPalabra;
     }
     
+    // Inicializa las variables en 0
     valorA=0;
     valorB=0;
     valorC=0;
@@ -402,6 +413,7 @@ class LectorNombre {
       println("El total de apariciones de la letra Z es : "+totalZ);
     }
     
+    // Inicializa las variables en 0
     aparicionesA=0;
     aparicionesB=0;
     aparicionesC=0;
@@ -455,6 +467,11 @@ class LectorNombre {
     totalZ=0;
   }
   
+  /***********************************************************
+  * Método para imprimir textos: el número de pares e impares. 
+  * Así como el valor del a vocales y consonantes y el valor
+  * total de la palabra.
+  *///////////////////////////////////////////////////////////
   void textos(String txt) {
     println("EL NÚMERO DE IMPARES EN EL " +txt+ " ES: "+impares);
     println("EL NÚMERO DE PARES EN EL " +txt+ " ES: "+pares);
@@ -463,17 +480,19 @@ class LectorNombre {
     println("El valor del " +txt+ " es: "+totalValorPalabra);
   }
  
-  // Método para cuantificar el valor total
-  // del nombre completo de la persona.
+  /***************************************
+  * Método para cuantificar el valor total
+  * del nombre completo de la persona.
+  *///////////////////////////////////////
   void totalesNombre() {
     totalNumeroImparNombreCompleto = numeroImparNombre+numeroImparApellidoPaterno+numeroImparApellidoMaterno;
     totalNumeroParNombreCompleto = numeroParNombre+numeroParApellidoPaterno+numeroParApellidoMaterno;
     println();
-    println("TOTAL NÚMERO IMPARES EN EL NOMBRE COMPLETO ES: "+totalNumeroImparNombreCompleto);
-    println("TOTAL NÚMERO PARES EN EL NOMBRE COMPLETO ES: "+totalNumeroParNombreCompleto);
+    println("TOTAL NÚMEROS IMPARES EN EL NOMBRE COMPLETO ES: "+totalNumeroImparNombreCompleto);
+    println("TOTAL NÚMEROS PARES EN EL NOMBRE COMPLETO ES: "+totalNumeroParNombreCompleto);
     println();
     
-    int temporalVocales, temporalConsonantes; /////////////////////////////////////////////////
+    int temporalVocales, temporalConsonantes; 
     int tmp, se;
     
     totalVocalesNombreCompleto = totalValorVocalesNombre+totalValorVocalesApellidoPaterno+totalValorVocalesApellidoMaterno;
@@ -519,13 +538,15 @@ class LectorNombre {
     }
   }
   
-  // Método para desplegar en el sketch el 
-  // total del nombre completo (talento natural).
+  /*********************************************
+  * Método para desplegar en el sketch el 
+  * total del nombre completo (talento natural).
+  */////////////////////////////////////////////
   int tn() {
     return talentoNatural;
   }
   
-  // Método de búsqueda lineal.
+  // Método de búsqueda lineal. 
   int busquedaLineal(char arr[], int n, char x) {
     for (int i = 0; i < n; i++)  { 
       // Retornar la posición (index) del elemento si  
@@ -536,13 +557,14 @@ class LectorNombre {
       // Retornar -1 si el elemento no es encontrado 
       return -1; 
   }
-  
-  // Métodos letraC() y consecutivaDeCesH()
-  // La finalidad de las funciones letraC() y consecutivaDeCesH() es encontrar la 
-  // letra c, y que después de esa letra c, exista un letra h para formar la letra
-  // 'ch' que es parte del alfabeto Español. Estás funciones tienen el desempeño
-  // esperado, solamente cuando exite un c y una h en el arreglo. Cuando hay dos 
-  // o más letras de cada una, el funcionamiento no es el optimo.
+  /******************************************************************************
+  * Métodos letraC() y consecutivaDeCesH()
+  * La finalidad de las funciones letraC() y consecutivaDeCesH() es encontrar la 
+  * letra c, y que después de esa letra c, exista un letra h para formar la letra
+  * 'ch' que es parte del alfabeto Español. Estás funciones tienen el desempeño
+  * esperado, solamente cuando exite un c y una h en el arreglo. Cuando hay dos 
+  * o más letras de cada una, el funcionamiento no es el optimo ???????
+  *//////////////////////////////////////////////////////////////////////////////
   int lista = 0;
   void letraC(int encontrar_c) { 
     if (encontrar_c < encontrar_h && encontrar_h < encontrar_c + 2) {
