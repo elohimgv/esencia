@@ -18,13 +18,9 @@ char[] arrApellidoPaterno = apellidoPaterno.toCharArray();
 char[] arrApellidoMaterno = apellidoMaterno.toCharArray();
 
 // Variables para la fecha de nacimiento
-String dia = "09"; 
-String mes = "09"; 
-String ano = "1987"; 
-String fechaNacimiento = dia+"-"+mes+"-"+ano;
-char[] arrDia = dia.toCharArray();
-char[] arrMes = mes.toCharArray();
-char[] arrAno = ano.toCharArray();  
+int dia = 9; 
+int mes = 9; 
+int ano = 1987;
 
 // Objetos declarados
 LectorFechaNacimiento f;
@@ -43,7 +39,7 @@ void setup() {
   textFont(fuente);
   // Carga de imagen
   
-  f = new LectorFechaNacimiento(arrDia, arrMes, arrAno);
+  f = new LectorFechaNacimiento(dia, mes, ano);
   n = new LectorNombre();
   i = new Interfaz();
   
@@ -51,8 +47,7 @@ void setup() {
   n.lectorNombre(arrApellidoPaterno, 2);
   n.lectorNombre(arrApellidoMaterno, 3);
   n.totalesNombre();
-  f.fechaNacimiento();
-  f.totalesFecha();
+  f.totalesFecha(); 
 }
 
 // Despliega el lienzo
