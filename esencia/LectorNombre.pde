@@ -66,7 +66,7 @@ class LectorNombre {
   int totalNumeroImparNombreCompleto, totalNumeroParNombreCompleto;
        
   // Variable para saber si ha sido introducido un caracter no permitido
-  final String CARACTER_NULO = "¡NO HAY VALORES DE ESTA LETRA!";
+  final String CARACTER_NULO = "¡NO HAY VALORES PARA ESTA SÍMBOLO!";
   
   // Variables que indican que cantidad de veces aparece determinado número 
   int contadorUno, contadorDos, contadorTres, contadorCuatro, contadorCinco,
@@ -84,13 +84,13 @@ class LectorNombre {
        // 1ra escala
       if (arr[ciclo] == 'a' || arr[ciclo] == 'A' || 
           arr[ciclo] == 'á' || arr[ciclo] == 'Á') {
-        println("El valor de a/A es 1.");
+        //println("El valor de a/A es 1.");
         a = 1;
         aparicionesA++;
         valorA = a*aparicionesA;
         totalA = aparicionesA;
       } else if (arr[ciclo] == 'b' || arr[ciclo] == 'B') {
-        println("El valor de b/B es 2.");
+        //println("El valor de b/B es 2.");
         b = 2;
         aparicionesB++;
         valorB = b*aparicionesB;
@@ -102,26 +102,26 @@ class LectorNombre {
         valorC = c*aparicionesC;
         totalC = aparicionesC;
       } else if (arr[ciclo] == 'd' || arr[ciclo] == 'D') {
-        println("El valor de d/D es 5.");
+        //println("El valor de d/D es 5.");
         d = 5;
         aparicionesD++;
         valorD = d*aparicionesD;
         totalD = aparicionesD;
       } else if (arr[ciclo] == 'e' || arr[ciclo] == 'E' || 
                  arr[ciclo] == 'é' || arr[ciclo] == 'É') {
-        println("El valor de e/E es 6.");
+        //println("El valor de e/E es 6.");
         e = 6;
         aparicionesE++;
         valorE = e*aparicionesE;
         totalE = aparicionesE;
       } else if (arr[ciclo] == 'f' || arr[ciclo] == 'F') {
-        println("El valor de f/F es 7.");
+        //println("El valor de f/F es 7.");
         f = 7;
         aparicionesF++;
         valorF = f*aparicionesF;
         totalF = aparicionesF;
       } else if (arr[ciclo] == 'g' || arr[ciclo] == 'G') {
-        println("El valor de g/G es 8.");
+        //println("El valor de g/G es 8.");
         g = 8;
         aparicionesG++;
         valorG = g*aparicionesG;
@@ -135,120 +135,120 @@ class LectorNombre {
         // 2da escala
       } else if (arr[ciclo] == 'i' || arr[ciclo] == 'I' || 
                  arr[ciclo] == 'í' || arr[ciclo] == 'Í') {
-        println("El valor de i/I es 1.");
+        //println("El valor de i/I es 1.");
         i = 1;
         aparicionesI++;
         valorI = i*aparicionesI;
         totalI = aparicionesI;
       } else if (arr[ciclo] == 'j' || arr[ciclo] == 'J') {
-        println("El valor de j/J es 2.");
+        //println("El valor de j/J es 2.");
         j = 2;
         aparicionesJ++;
         valorJ = j*aparicionesJ;
         totalJ = aparicionesJ;
       } else if (arr[ciclo] == 'k' || arr[ciclo] == 'K') {
-        println("El valor de k/K es 3.");
+        //println("El valor de k/K es 3.");
         k = 3;
         aparicionesK++;
         valorK = k*aparicionesK;
         totalK = aparicionesK;
       } else if (arr[ciclo] == 'l' || arr[ciclo] == 'L') {
-        println("El valor de l/L es 4.");
+        //println("El valor de l/L es 4.");
         l = 4;
         aparicionesL++;
         valorL = l*aparicionesL;
         totalL = aparicionesL;
         // Falta ll
       } else if (arr[ciclo] == 'm'|| arr[ciclo] == 'M') {
-        println("El valor de m/M es 6.");
+        //println("El valor de m/M es 6.");
         m = 6;
         aparicionesM++;
         valorM = m*aparicionesM;
         totalM = aparicionesM;
       } else if (arr[ciclo] == 'n' || arr[ciclo] == 'N') {
-        println("El valor de n/N es 7.");
+        //println("El valor de n/N es 7.");
         n = 7;
         aparicionesN++;
         valorN = n*aparicionesN;
         totalN = aparicionesN;
       } else if (arr[ciclo] == 'ñ' || arr[ciclo] == 'Ñ') {
-        println("El valor de ñ/Ñ es 8.");
+        //println("El valor de ñ/Ñ es 8.");
         nn = 8;
         aparicionesNN++;
         valorNN = nn*aparicionesNN;
         totalNN = aparicionesNN;
       } else if (arr[ciclo] == 'o' || arr[ciclo] == 'O' || 
                  arr[ciclo] == 'ó' || arr[ciclo] == 'Ó') {
-        println("El valor de o/O es 9.");
+        //println("El valor de o/O es 9.");
         o = 9;
         aparicionesO++;
         valorO = o*aparicionesO;
         totalO = aparicionesO;
         // 3ra escala
       } else if (arr[ciclo] == 'p' || arr[ciclo] == 'P') {
-        println("El valor de p/P es 1.");
+        //println("El valor de p/P es 1.");
         p = 1;
         aparicionesP++;
         valorP = p*aparicionesP;
         totalP = aparicionesP;
       } else if (arr[ciclo] == 'q' || arr[ciclo] == 'Q') {
-        println("El valor de q/Q es 2.");
+        //println("El valor de q/Q es 2.");
         q = 2;
         aparicionesQ++;
         valorQ = q*aparicionesQ;
         totalQ = aparicionesQ;
       } else if (arr[ciclo] == 'r' || arr[ciclo] == 'R') {
-        println("El valor de r/R es 3.");
+        //println("El valor de r/R es 3.");
         r = 3;
         aparicionesR++;
         valorR = r*aparicionesR;
         totalR = aparicionesR;
       } else if (arr[ciclo] == 's' || arr[ciclo] == 'S') {
-        println("El valor de s/S es 4.");
+        //println("El valor de s/S es 4.");
         s = 4;
         aparicionesS++;
         valorS = s*aparicionesS;
         totalS = aparicionesS;
       } else if (arr[ciclo] == 't' || arr[ciclo] == 'T') {
-        println("El valor de t/T es 5.");
+        //println("El valor de t/T es 5.");
         t = 5;
         aparicionesT++;
         valorT = t*aparicionesT;
         totalT = aparicionesT;
       } else if (arr[ciclo] == 'u' || arr[ciclo] == 'U' || 
                  arr[ciclo] == 'ú' || arr[ciclo] == 'Ú') {
-        println("El valor de u/U es 6.");
+        //println("El valor de u/U es 6.");
         u = 6;
         aparicionesU++;
         valorU = u*aparicionesU;
         totalU = aparicionesU;
       } else if (arr[ciclo] == 'v' || arr[ciclo] == 'V') {
-        println("El valor de v/V es 7.");
+        //println("El valor de v/V es 7.");
         v = 7;
         aparicionesV++;
         valorV = v*aparicionesV;
         totalV = aparicionesV;
       } else if (arr[ciclo] == 'w' || arr[ciclo] == 'W') {
-        println("El valor de w/W es 8.");
+        //println("El valor de w/W es 8.");
         w = 8;
         aparicionesW++;
         valorW = w*aparicionesW;
         totalW = aparicionesW; 
       } else if (arr[ciclo] == 'x' || arr[ciclo] == 'X') {
-        println("El valor de x/X es 9.");
+        //println("El valor de x/X es 9.");
         x = 9;
         aparicionesX++;
         valorX = x*aparicionesX;
         totalX = aparicionesX;
       } else if (arr[ciclo] == 'y' || arr[ciclo] == 'Y') {
-        println("El valor de y/Y es 1.");
+        //println("El valor de y/Y es 1.");
         y = 1;
         aparicionesY++;
         valorY = y*aparicionesY;
         totalY = aparicionesY;
         // 4ta escala
       } else if (arr[ciclo] == 'z' || arr[ciclo] == 'Z') {
-        println("El valor de z/Z es 2.");
+        //println("El valor de z/Z es 2.");
         z = 2;
         aparicionesZ++;
         valorZ = z*aparicionesZ;
@@ -280,7 +280,7 @@ class LectorNombre {
               totalV+totalX+totalY;
     
     if (plb == 1) {
-      textos("NOMBRE");
+      //textos("NOMBRE");
       numeroImparNombre = impares;
       numeroParNombre = pares;
       totalValorVocalesNombre = vocales;
@@ -288,7 +288,7 @@ class LectorNombre {
       totalValorNombre = totalValorPalabra;
     }
     if (plb == 2) {
-      textos("APELLIDO PATERNO");
+      //textos("APELLIDO PATERNO");
       numeroImparApellidoPaterno = impares;
       numeroParApellidoPaterno = pares;
       totalValorVocalesApellidoPaterno = vocales; 
@@ -296,7 +296,7 @@ class LectorNombre {
       totalValorApellidoPaterno = totalValorPalabra;
     }
     if (plb == 3) {
-      textos("APELLIDO MATERNO");
+      //textos("APELLIDO MATERNO");
       numeroImparApellidoMaterno = impares;
       numeroParApellidoMaterno = pares;
       totalValorVocalesApellidoMaterno = vocales; 
@@ -335,82 +335,82 @@ class LectorNombre {
     // Si el número de aparciones de la letra correspondiente es
     // mayor a 0 cero imprime el total.
     if (aparicionesA > 0) {
-      println("El total de apariciones de la letra A es : "+totalA);
+      //println("El total de apariciones de la letra A es : "+totalA);
     }
     if (aparicionesB > 0) {
-      println("El total de apariciones de la letra B es : "+totalB);
+      //println("El total de apariciones de la letra B es : "+totalB);
     }
     if (aparicionesC > 0) {
-      println("El total de apariciones de la letra C es : "+totalC);
+      //println("El total de apariciones de la letra C es : "+totalC);
     }
     if (aparicionesD > 0) {
-      println("El total de apariciones de la letra D es : "+totalD);
+      //println("El total de apariciones de la letra D es : "+totalD);
     }
     if (aparicionesE > 0) {
-      println("El total de apariciones de la letra E es : "+totalE);
+      //println("El total de apariciones de la letra E es : "+totalE);
     }
     if (aparicionesF > 0) {
-      println("El total de apariciones de la letra F es : "+totalF);
+      //println("El total de apariciones de la letra F es : "+totalF);
     }
     if (aparicionesG > 0) {
-      println("El total de apariciones de la letra G es : "+totalG);
+      //println("El total de apariciones de la letra G es : "+totalG);
     }
     if (aparicionesH > 0) {
-      println("El total de apariciones de la letra H es : "+totalH);
+      //println("El total de apariciones de la letra H es : "+totalH);
     }
     if (aparicionesI > 0) {
-      println("El total de apariciones de la letra I es : "+totalI);
+      //println("El total de apariciones de la letra I es : "+totalI);
     }
     if (aparicionesJ > 0) {
-      println("El total de apariciones de la letra J es : "+totalJ);
+      //println("El total de apariciones de la letra J es : "+totalJ);
     }
     if (aparicionesK > 0) {
-      println("El total de apariciones de la letra K es : "+totalK);
+      //println("El total de apariciones de la letra K es : "+totalK);
     }
     if (aparicionesL > 0) {
-      println("El total de apariciones de la letra L es : "+totalL);
+      //println("El total de apariciones de la letra L es : "+totalL);
     }
     if (aparicionesM > 0) {
-      println("El total de apariciones de la letra M es : "+totalM);
+      //println("El total de apariciones de la letra M es : "+totalM);
     }
     if (aparicionesN > 0) {
-      println("El total de apariciones de la letra N es : "+totalN);
+      //println("El total de apariciones de la letra N es : "+totalN);
     }
     if (aparicionesNN > 0) {
-      println("El total de apariciones de la letra Ñ es : "+totalNN);
+      //println("El total de apariciones de la letra Ñ es : "+totalNN);
     }
     if (aparicionesO > 0) {
-      println("El total de apariciones de la letra O es : "+totalO);
+      //println("El total de apariciones de la letra O es : "+totalO);
     }
     if (aparicionesP > 0) {
-      println("El total de apariciones de la letra P es : "+totalP);
+      //println("El total de apariciones de la letra P es : "+totalP);
     }
     if (aparicionesQ > 0) {
-      println("El total de apariciones de la letra Q es : "+totalQ);
+      //println("El total de apariciones de la letra Q es : "+totalQ);
     }
     if (aparicionesR > 0) {
-      println("El total de apariciones de la letra R es : "+totalR);
+      //println("El total de apariciones de la letra R es : "+totalR);
     }
     if (aparicionesS > 0) {
-      println("El total de apariciones de la letra S es : "+totalS);
+      //println("El total de apariciones de la letra S es : "+totalS);
     }
     if (aparicionesT > 0) {
-      println("El total de apariciones de la letra T es : "+totalT);
+      //println("El total de apariciones de la letra T es : "+totalT);
     }
     if (aparicionesU > 0) {
-      println("El total de apariciones de la letra U es : "+totalU);
+      //println("El total de apariciones de la letra U es : "+totalU);
     }
     if (aparicionesV > 0) {
-      println("El total de apariciones de la letra V es : "+totalV);
+      //println("El total de apariciones de la letra V es : "+totalV);
     }
     if (aparicionesX > 0) {
-      println("El total de apariciones de la letra X es : "+totalX);
+      //println("El total de apariciones de la letra X es : "+totalX);
     }
     if (aparicionesY > 0) {
-      println("El total de apariciones de la letra Y es : "+totalY);
+      //println("El total de apariciones de la letra Y es : "+totalY);
     }
     if (aparicionesZ > 0) {
-      println("El total de apariciones de la letra Z es : "+totalZ);
+      //println("El total de apariciones de la letra Z es : "+totalZ);
     }
     
     // Inicializa las variables en 0
@@ -487,10 +487,10 @@ class LectorNombre {
   void totalesNombre() {
     totalNumeroImparNombreCompleto = numeroImparNombre+numeroImparApellidoPaterno+numeroImparApellidoMaterno;
     totalNumeroParNombreCompleto = numeroParNombre+numeroParApellidoPaterno+numeroParApellidoMaterno;
-    println();
+    /*println();
     println("TOTAL NÚMEROS IMPARES EN EL NOMBRE COMPLETO ES: "+totalNumeroImparNombreCompleto);
     println("TOTAL NÚMEROS PARES EN EL NOMBRE COMPLETO ES: "+totalNumeroParNombreCompleto);
-    println();
+    println();*/
     
     int temporalVocales, temporalConsonantes; 
     int tmp, se;
@@ -505,23 +505,23 @@ class LectorNombre {
       temperamento = digito_temperamento.unDigito(tmp, "TEMPERAMENTO");
       se = temporalVocales + temporalConsonantes + temperamento;
       ser = digito_ser.unDigito(se, "SER");
-      println();
+      /*println();
       println("EL VALOR TOTAL DE LAS VOCALES ES: "+temporalVocales);
       println("EL VALOR TOTAL DE LAS CONSONANTES ES: "+temporalConsonantes);
       println("EL VALOR DEL TEMPERAMENTO ES: "+temperamento);
       println("EL NIVEL DEL SER ES: "+ser);
-      println();
+      println();*/
     } else {
       temporalVocales = totalVocalesNombreCompleto;
       temporalConsonantes = totalConsonatesNombreCompleto;
       temperamento = temporalVocales + temporalConsonantes;
       ser = temporalVocales + temporalConsonantes + temperamento;
-      println();
+      /*println();
       println("EL VALOR TOTAL DE LAS VOCALES ES: "+temporalVocales);
       println("EL VALOR TOTAL DE LAS CONSONANTES ES: "+temporalConsonantes);
       println("EL VALOR DEL TEMPERAMENTO ES: "+temperamento);
       println("EL NIVEL DEL SER ES: "+ser);
-      println();
+      println();*/
     }
     
     int totalNombreCompleto = totalValorNombre+totalValorApellidoPaterno+totalValorApellidoMaterno;

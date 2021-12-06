@@ -1,3 +1,4 @@
+
 /*
 *
 *  Autor: Elohim Guevara
@@ -6,16 +7,11 @@
 *
 */
 
+PFont fuente;
 // Variables para el nombre de la persona
-String nombre = "Elohim";
-String apellidoPaterno = "Guevara";
-String apellidoMaterno = "Varela";
-String nombreCompleto = nombre+" "+apellidoPaterno+" "+apellidoMaterno;
-
-// Convetir la cadena en un arreglo de caracteres
-char[] arrNombre = nombre.toCharArray();
-char[] arrApellidoPaterno = apellidoPaterno.toCharArray();
-char[] arrApellidoMaterno = apellidoMaterno.toCharArray();
+String nombreCompleto = "";
+String borrarLetra = "";
+String[] mo = {};
 
 // Variables para la fecha de nacimiento
 int dia = 9; 
@@ -25,41 +21,56 @@ int ano = 1987;
 // Objetos declarados
 LectorFechaNacimiento f;
 LectorNombre n;
-Interfaz i;
-
-PFont fuente;
-PImage img;
 
 void setup() {
   // Tamaño del lienzo
   size(displayWidth, displayHeight); 
-  background(0);
-  // Carga de fuente
-  fuente = loadFont("Raleway-Regular-48.vlw");
+  // Crear fuente
+  fuente = createFont("Arial", 32);
   textFont(fuente);
-  // Carga de imagen
   
   f = new LectorFechaNacimiento(dia, mes, ano);
   n = new LectorNombre();
-  i = new Interfaz();
   
-  n.lectorNombre(arrNombre, 1);
-  n.lectorNombre(arrApellidoPaterno, 2);
-  n.lectorNombre(arrApellidoMaterno, 3);
-  n.totalesNombre();
-  f.totalesFecha(); 
+  f.totalesFecha(); // mover a keyPressed()
 }
 
-// Despliega el lienzo
+// Dibujando sobre el lienzo
 void draw() { 
-  // Nombre
-  i.desplegarTexto(nombreCompleto, 100);
-  
-  // Talento Natural
-  i.desplegarTexto("Talento Natural", 180);
-  i.desplegarDigito(n.tn(), -130, -115);
-  
-  // Urgencia Interior
-  i.desplegarTexto("Urgencia Interior", 360);
-  i.desplegarDigito(f.ui(), 50, 65);
+  background(234, 17, 17);
+  textSize(80);
+  text("SEGÚN IGLESIAS JANEIRO", 50, 100);
+  // NOMBRE
+  fill(234, 252, 38);
+  textSize(32);
+  text("Nombre: ", 50, 150);
+  text(nombreCompleto, textWidth("Nombre: ")+50, 150);
+}
+
+void keyTyped() {
+  // La variable "key" siempre contiene el valor
+  // del más reciente símbolo presionado
+  if ((key >= 'A' && key <= 'z') || key == ' ') {
+    nombreCompleto = nombreCompleto + key;
+  }
+  // Borrar texto
+  if (key == TAB) {
+    if (nombreCompleto.length() > 0) {
+      borrarLetra = nombreCompleto.substring(0, nombreCompleto.length()-1);
+    } else {
+      
+    }
+    nombreCompleto = borrarLetra;
+  }
+}
+
+void keyPressed() {
+  if (key == ENTER) {
+    mo = match(nombreCompleto, "(\\w+)\\s(\\w+)\\s(\\w+)");
+    
+    n.lectorNombre(mo[1].toCharArray(), 1);
+    n.lectorNombre(mo[2].toCharArray(), 2);
+    n.lectorNombre(mo[3].toCharArray(), 3);
+    n.totalesNombre();
+  }
 }

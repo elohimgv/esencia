@@ -1,6 +1,6 @@
 /*
-* Clase para descomponer cifras mayores a un digito
-* y cambiarlas a un sólo digito.
+* Clase para sumar todas las 
+* cifras mayores a un digito
 */
 
 class Digito {
@@ -8,28 +8,25 @@ class Digito {
   // Variables para almacenar los números 
   int uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve;
   
-  // Variables para los totales de los números: Hay un conteo 
-  // de aparicones del número (variable), y éste, es multiplicado 
-  // por el valor la variable número para calcular el total. 
+  // Variables para los totales de los números 
   int totalUno, totalDos, totalTres, totalCuatro, totalCinco, 
       totalSeis, totalSiete, totalOcho, totalNueve;
       
   // Variable para almacenar el total final   
   int elTotal;
   
-  // Indica que cantidad de veces que aparece determinado número 
+  // Para indicar que cantidad de veces aparece determinado número 
   int contadorUno, contadorDos, contadorTres, contadorCuatro, contadorCinco, 
       contadorSeis, contadorSiete, contadorOcho, contadorNueve;
 
   /**************************************************************
   * Método que recorre el arreglo para iterar sobre la cantidad
-  * dispuesta, y conocer su composición numérica; ¿cuántas veces 
-  * aparece el 0, el 1,  el 2, el 3...? Multiplica las 
-  * apariciones por el valor de cada número, para conocer el 
-  * valor total (apariciones * valor del número). Finalmente 
-  * suma todos los valores totales y dame un total final. 
+  * dispuesta y conocer su composición numérica; ¿cuántas veces 
+  * aparece el 0, el 1,  el 2, el 3...?; multiplica las apariciones
+  * por el valor de cada número, para conocer el valor total.
+  * Finalmente suma todos los valores y da un total final. 
   *//////////////////////////////////////////////////////////////
-  int iterador(char[] numero) {
+  int composicionNumeral(char[] numero) {
     for (int ciclo = 0; ciclo < numero.length; ciclo++) {
       switch(numero[ciclo]) {
       case '0':
@@ -135,23 +132,24 @@ class Digito {
   } 
 
   /**************************************************
-  * Método recursivo para reducir un número a una sola 
-  * cifra. Si el número a reducir es menos a dos cifras 
-  * se retorna ese mismo número, si no se procede a 
-  * descomponer para obtener una sólo digito y tetornarlo.
+  * Método recursivo para reducir un número (mayor   
+  * a un digito) a una sola  cifra. Si el número a   
+  * reducir es menos a dos cifras se retorna ese 
+  * mismo número, si no, se  procede a descomponer    
+  * para obtener un sólo digito.
   *//////////////////////////////////////////////////
   int unDigito(int numero_a_reducir, String componente) {
     if (numero_a_reducir < 10) {
       return numero_a_reducir;
     } else {
       if (componente == "DÍA" || componente == "MES" || componente == "AÑO") {
-        println("El valor del ARMÓNICO del " +componente+ " es: "+numero_a_reducir);
+        //println("El valor del ARMÓNICO del " +componente+ " es: "+numero_a_reducir);
       } else if (componente == "URGENCIA INTERIOR") {
-        println("El valor del ARMÓNICO del " +componente+ " es: "+numero_a_reducir);
+        println("El valor del ARMÓNICO de la " +componente+ " es: "+numero_a_reducir);
       } else if (componente == "VOCALES" || componente == "CONSONANTES" || componente == "TEMPERAMENTO") {
-        println("El valor del ARMÓNICO de las " +componente+ " es: "+numero_a_reducir);
+        //println("El valor del ARMÓNICO de las " +componente+ " es: "+numero_a_reducir);
       } else if (componente == "SER") {
-        println("El valor del ARMÓNICO de las " +componente+ " es: "+numero_a_reducir);
+        //println("El valor del ARMÓNICO de las " +componente+ " es: "+numero_a_reducir);
       } else if (componente == "TALENTO NATURAL") {
         println("El valor del ARMÓNICO de las " +componente+ " es: "+numero_a_reducir);
       }
@@ -159,10 +157,10 @@ class Digito {
 
     // Convierte al dato entero en uno de cadena
     String numeroComoCadena = Integer.toString(numero_a_reducir);
-    // Convierte el dato de cadena en uno de caracter
+    // Convierte al dato de cadena en uno de caracter
     char[] unDigitoTotalValor = numeroComoCadena.toCharArray();
-    // Variable que utiliza el método iterador 
-    int total = iterador(unDigitoTotalValor);
+    // Variable que utiliza el método composicionNumeral
+    int total = composicionNumeral(unDigitoTotalValor);
 
     // Método que inicializa valores
     init();

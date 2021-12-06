@@ -2,8 +2,9 @@
 * Clase para reducir a una sola cifra
 * la fecha de nacimiento. El día se lleva
 * a una sola cifra así como el mes y el 
-* año, y por último se obtiene la cifra 
-* de un digito.
+* año, y por último se suman estos tres
+* para obtener un total que es llevado
+* a una sola cifra.
 */
 
 class LectorFechaNacimiento {
@@ -50,8 +51,8 @@ class LectorFechaNacimiento {
   }
   
   /*****************************************************
-  * Método para desplegar en el sketch el 
-  * total de la fecha de nacimiento (urgencia interior).
+  * Método para desplegar en el sketch el total
+  * de la fecha de nacimiento (urgencia interior).
   */////////////////////////////////////////////////////
   int ui() {
     return urgenciaInterior;
